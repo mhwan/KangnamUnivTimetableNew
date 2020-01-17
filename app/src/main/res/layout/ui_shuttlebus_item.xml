@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:gravity="center_vertical"
+    android:paddingLeft="6dp"
+    android:layout_height="26dp">
+    <TextView
+        android:id="@+id/shuttlebus_item_title"
+        android:layout_width="wrap_content"
+        android:text="강남대역 - 이공관"
+        android:textColor="@color/colorPrimaryBlack"
+        android:textSize="13dp"
+        android:layout_marginRight="14dp"
+        android:layout_height="wrap_content" />
+
+
+    <LinearLayout
+        android:id="@+id/shuttlebus_item_time_frame"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/shuttlbus_item_0"
+            android:layout_width="wrap_content"
+            android:text="08:10"
+            android:textSize="12dp"
+            android:paddingRight="14dp"
+            android:textColor="@color/colorLightBlack"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</LinearLayout>

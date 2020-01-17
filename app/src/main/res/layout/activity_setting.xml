@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activity.SettingActivity">
+
+    <include layout="@layout/layout_base_toolbar" />
+
+    <ScrollView
+        android:fillViewport="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@color/colorBackgroundLightBlue"
+                android:paddingLeft="16dp"
+                android:text="@string/user_info"
+                android:gravity="center_vertical"
+                android:paddingRight="10dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:textColor="@color/colorPrimary"
+                android:textSize="13sp"
+                />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:paddingTop="14dp"
+                android:paddingBottom="16dp"
+                android:paddingLeft="14dp"
+                android:paddingRight="14dp"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_centerVertical="true"
+                    android:id="@+id/setting_profile"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/ic_profile"/>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="14dp"
+                    android:layout_toRightOf="@id/setting_profile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/setting_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15dp"
+                        android:textColor="@color/colorPrimaryBlack"
+                        android:text="배명환"/>
+                    <TextView
+                        android:id="@+id/setting_id"
+                        android:layout_width="wrap_content"
+                        android:text="201401272"
+                        android:textSize="15dp"
+                        android:textColor="@color/colorLightBlack"
+                        android:layout_marginTop="4dp"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <com.mhwan.kangnamunivtimetable.CustomUI.CheckableTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:selected_text_color="@android:color/white"
+                    android:id="@+id/setting_button_logout"
+                    app:default_text_color="@color/colorPrimary"
+                    app:checkable="false"
+                    android:clickable="true"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:text="@string/logout"
+                    android:textSize="14dp"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="12dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:background="@drawable/bg_custom_lable"/>
+            </RelativeLayout>
+
+            <FrameLayout
+                android:id="@+id/setting_frame"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </FrameLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.mhwan.kangnamunivtimetable.CustomUI.CustomPreferenceCategory
+        android:title="과제 및 일정">
+        <com.mhwan.kangnamunivtimetable.CustomUI.CustomPreference
+            android:title="과제 일정 전체 삭제"
+            android:key="key_remove_schedule"
+            android:summary="기기에 저장된 모든 과제와 일정 데이터를 삭제합니다.">
+        </com.mhwan.kangnamunivtimetable.CustomUI.CustomPreference>
+        <CheckBoxPreference
+            android:title="완료된 일정 보이기"
+            android:key="key_show_finish"
+            android:defaultValue="true"
+            android:summary="완료된 일정을 리스트에 보이게 설정합니다.">
+        </CheckBoxPreference>
+        <SwitchPreference
+            android:key="key_show_alarm"
+            android:defaultValue="true"
+            android:title="팝업알림을 띄움"></SwitchPreference>
+        <ListPreference
+            android:title="기본 알림 시간"
+            android:key="key_alarm_show_time"
+            android:entries="@array/Alarm_time_values"
+            android:defaultValue="0"
+            android:entryValues="@array/Alarm_time_opts"></ListPreference>
+       <SwitchPreference
+           android:key="key_alarm_vibrate"
+           android:defaultValue="true"
+           android:title="알림시 진동여부"></SwitchPreference>
+    </com.mhwan.kangnamunivtimetable.CustomUI.CustomPreferenceCategory>
+
+    <com.mhwan.kangnamunivtimetable.CustomUI.CustomPreferenceCategory
+        android:title="어플리케이션">
+        <com.mhwan.kangnamunivtimetable.CustomUI.CustomPreference
+            android:title="앱 버전"
+            android:key="key_app_version"
+            android:summary="1.0.0">
+        </com.mhwan.kangnamunivtimetable.CustomUI.CustomPreference>
+        <com.mhwan.kangnamunivtimetable.CustomUI.CustomPreference
+            android:key="key_guide"
+            android:title="사용안내 가이드">
+        </com.mhwan.kangnamunivtimetable.CustomUI.CustomPreference>
+        <com.mhwan.kangnamunivtimetable.CustomUI.CustomPreference
+            android:key="key_reset_app"
+            android:title="어플리케이션 리셋"
+            android:summary="기기 내에 저장된 사용자 정보 및 모든 데이터를 삭제합니다.">
+        </com.mhwan.kangnamunivtimetable.CustomUI.CustomPreference>
+        <com.mhwan.kangnamunivtimetable.CustomUI.CustomPreference
+            android:key="key_mail_to_developer"
+            android:title="개발자에게"
+            android:summary="개발자에게 앱과 관련하여 메일을 보냅니다.">
+        </com.mhwan.kangnamunivtimetable.CustomUI.CustomPreference>
+        <com.mhwan.kangnamunivtimetable.CustomUI.CustomPreference
+            android:key="key_share_friends"
+            android:title="앱 공유"
+            android:summary="친구들에게 이 앱을 소개시켜주세요.">
+        </com.mhwan.kangnamunivtimetable.CustomUI.CustomPreference>
+    </com.mhwan.kangnamunivtimetable.CustomUI.CustomPreferenceCategory>
+</PreferenceScreen>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView android:layout_width="match_parent"
+    android:layout_height="30dp"
+    android:background="@color/colorBackgroundLightBlue"
+    android:paddingLeft="16dp"
+    android:text="@string/user_info"
+    android:id="@+android:id/title"
+    android:gravity="center_vertical"
+    android:paddingRight="10dp"
+    android:paddingTop="6dp"
+    android:paddingBottom="6dp"
+    android:textColor="@color/colorPrimary"
+    android:textSize="13sp"
+    xmlns:android="http://schemas.android.com/apk/res/android" />

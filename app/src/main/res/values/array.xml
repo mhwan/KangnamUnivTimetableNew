@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="Score_value_array">
+        <item>@string/Score_value_0</item>
+        <item>@string/Score_value_1</item>
+        <item>@string/Score_value_2</item>
+        <item>@string/Score_value_3</item>
+        <item>@string/Score_value_4</item>
+        <item>@string/Score_value_5</item>
+        <item>@string/Score_value_6</item>
+        <item>@string/Score_value_7</item>
+        <item>@string/Score_value_8</item>
+    </string-array>
+    <string-array name="Unit_value_array">
+        <item>@string/Unit_value_0</item>
+        <item>@string/Unit_value_1</item>
+        <item>@string/Unit_value_2</item>
+        <item>@string/Unit_value_3</item>
+    </string-array>
+    <string-array name="Building_name_array">
+        <item>@string/name_kyungchun</item>
+        <item>@string/name_hoosang</item>
+        <item>@string/name_mokyang</item>
+        <item>@string/name_insa</item>
+        <item>@string/name_kyoyook</item>
+        <item>@string/name_leekong</item>
+        <item>@string/name_library</item>
+        <item>@string/name_main</item>
+        <item>@string/name_yesul</item>
+        <item>@string/name_simjunA</item>
+        <item>@string/name_simjunB</item>
+        <item>@string/name_simjun2</item>
+        <item>@string/name_chuneun</item>
+        <item>@string/name_woowon</item>
+        <item>@string/name_shalom</item>
+        <item>@string/name_seungri</item>
+    </string-array>
+
+    <integer-array name="Color_array">
+        <item>@color/colorLightRed</item>
+        <item>@color/colorDarkRed</item>
+        <item>@color/colorLightPink</item>
+        <item>@color/colorDarkPink</item>
+        <item>@color/colorLightPurple</item>
+        <item>@color/colorDarkPurple</item>
+        <item>@color/colorLightDeepPurple</item>
+        <item>@color/colorDarkDeepPurple</item>
+        <item>@color/colorLightIndigo</item>
+        <item>@color/colorDarkIndigo</item>
+        <item>@color/colorPrimary</item>
+        <item>@color/colorPrimary2</item>
+        <item>@color/colorLightCyan</item>
+        <item>@color/colorLightTeal</item>
+        <item>@color/colorLightGreen</item>
+        <item>@color/colorDarkGreen</item>
+        <item>@color/colorLightLime</item>
+        <item>@color/colorDarkLime</item>
+        <item>@color/colorDarkYellow</item>
+        <item>@color/colorLightOrange</item>
+        <item>@color/colorDarkOrange</item>
+        <item>@color/colorLightDeepOrange</item>
+        <item>@color/colorDarkDeepOrange</item>
+        <item>@color/colorLightBrown</item>
+        <item>@color/colorLightBlueGray</item>
+        <item>@color/colorDarkBlueGray</item>
+    </integer-array>
+
+    <string-array name="Alarm_time_values">
+        <item>마감시간에 알림</item>
+        <item>마감 1시간 전 알림</item>
+        <item>마감 12시간 전 알림</item>
+        <item>알림 안받음</item>
+    </string-array>
+
+    <string-array name="Bus_type">
+        <item>기흥역 - 이공관</item>
+        <item>이공관 - 기흥역</item>
+        <item>사훈프라자 - 이공관</item>
+        <item>이공관 - 사훈프라자</item>
+    </string-array>
+    <string-array name="Schedule_name">
+        <item>이번학기</item>
+        <item>학사일정표</item>
+        <item>지난학기</item>
+    </string-array>
+    <string-array name="Alarm_time_opts">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+</resources>

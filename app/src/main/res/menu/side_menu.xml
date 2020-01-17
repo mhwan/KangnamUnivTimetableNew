@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/button_time_table"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="내 시간표" />
+        <item
+            android:id="@+id/button_manage_score"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="성적계산 / 학점관리" />
+        <item
+            android:id="@+id/button_manage_schedule"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="시험 및 과제 일정관리" />
+        <item
+            android:id="@+id/button_setting"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="앱 설정" />
+    </group>
+</menu>

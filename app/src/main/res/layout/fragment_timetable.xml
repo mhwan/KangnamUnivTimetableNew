@@ -1,0 +1,395 @@
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/time_table_root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/empty_text_timetable"
+            android:layout_width="match_parent"
+            android:layout_height="320dp"
+            android:background="@drawable/bg_box"
+            android:gravity="center"
+            android:text="시간표 데이터가 없습니다."/>
+
+        <TableLayout
+            android:id="@+id/time_table_border"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_box">
+
+            <TableRow>
+
+                <TextView
+
+                    android:id="@+id/time_table_time_0"
+                    android:gravity="center" />
+                <View android:background="@color/colorDividerGray"
+                    android:layout_height="match_parent"
+                    android:layout_width="1px"/>
+
+                <TextView
+                    android:id="@+id/time_table_mon_0"
+                    android:gravity="center"
+                    android:textSize="12dp"
+                    android:text="@string/mon" />
+                <View android:background="@color/colorDividerGray"
+                    android:layout_height="match_parent"
+                    android:layout_width="1px"/>
+
+                <TextView
+                    android:id="@+id/time_table_tue_0"
+                    android:gravity="center"
+                    android:textSize="12dp"
+                    android:text="@string/tue" />
+
+                <View android:background="@color/colorDividerGray"
+                    android:layout_height="match_parent"
+                    android:layout_width="1px"/>
+                <TextView
+                    android:id="@+id/time_table_wed_0"
+                    android:gravity="center"
+                    android:textSize="12dp"
+                    android:text="@string/wed" />
+
+                <View android:background="@color/colorDividerGray"
+                    android:layout_height="match_parent"
+                    android:layout_width="1px"/>
+                <TextView
+                    android:id="@+id/time_table_thu_0"
+                    android:gravity="center"
+                    android:textSize="12dp"
+                    android:text="@string/thu" />
+                <View android:background="@color/colorDividerGray"
+                    android:layout_height="match_parent"
+                    android:layout_width="1px"/>
+
+                <TextView
+                    android:id="@+id/time_table_fri_0"
+                    android:gravity="center"
+                    android:textSize="12dp"
+                    android:text="@string/fri" />
+            </TableRow>
+
+            <View android:background="@color/colorDividerGray"
+                android:layout_height="1px"
+                android:layout_width="match_parent"/>
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/time_table_time_1"
+                    android:textSize="8dp"
+                    android:gravity="center"
+                    android:text="09:00\n09:50"/>
+                <View android:background="@color/colorDividerGray"
+                    android:layout_height="match_parent"
+                    android:layout_width="1px"/>
+                <TextView android:id="@+id/time_table_mon_1" />
+                <View android:background="@color/colorDividerGray"
+                    android:layout_height="match_parent"
+                    android:layout_width="1px"/>
+
+                <TextView
+                    android:id="@+id/time_table_tue_1"/>
+                <View android:background="@color/colorDividerGray"
+                    android:layout_height="match_parent"
+                    android:layout_width="1px"/>
+
+                <TextView
+                    android:id="@+id/time_table_wed_1"/>
+                <View android:background="@color/colorDividerGray"
+                    android:layout_height="match_parent"
+                    android:layout_width="1px"/>
+
+                <TextView
+                    android:id="@+id/time_table_thu_1" />
+                <View android:background="@color/colorDividerGray"
+                    android:layout_height="match_parent"
+                    android:layout_width="1px"/>
+
+                <TextView
+                    android:id="@+id/time_table_fri_1"/>
+            </TableRow>
+            <View android:background="@color/colorDividerGray"
+                android:layout_height="1px"
+                android:layout_width="match_parent"/>
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/time_table_time_2"
+                    android:gravity="center"
+                    android:textSize="8dp"
+                    android:text="09:55\n10:50" />
+                <View android:background="@color/colorDividerGray"
+                    android:layout_height="match_parent"
+                    android:layout_width="1px"/>
+
+                <TextView android:id="@+id/time_table_mon_2" />
+                <View android:background="@color/colorDividerGray"
+                    android:layout_height="match_parent"
+                    android:layout_width="1px"/>
+
+                <TextView android:id="@+id/time_table_tue_2" />
+                <View android:background="@color/colorDividerGray"
+                    android:layout_height="match_parent"
+                    android:layout_width="1px"/>
+
+                <TextView android:id="@+id/time_table_wed_2" />
+                <View android:background="@color/colorDividerGray"
+                    android:layout_height="match_parent"
+                    android:layout_width="1px"/>
+
+                <TextView android:id="@+id/time_table_thu_2" />
+                <View android:background="@color/colorDividerGray"
+                    android:layout_height="match_parent"
+                    android:layout_width="1px"/>
+
+                <TextView android:id="@+id/time_table_fri_2" />
+            </TableRow>
+            <View android:background="@color/colorDividerGray"
+                android:layout_height="1px"
+                android:layout_width="match_parent"/>
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/time_table_time_3"
+                    android:textSize="8dp"
+                    android:gravity="center"
+                    android:text="10:50\n11:45" />
+                <View android:background="@color/colorDividerGray"
+                android:layout_height="match_parent"
+                android:layout_width="1px"/>
+
+                <TextView android:id="@+id/time_table_mon_3" />
+                <View android:background="@color/colorDividerGray"
+                    android:layout_height="match_parent"
+                    android:layout_width="1px"/>
+
+                <TextView android:id="@+id/time_table_tue_3" />
+                <View android:background="@color/colorDividerGray"
+                    android:layout_height="match_parent"
+                    android:layout_width="1px"/>
+
+                <TextView android:id="@+id/time_table_wed_3" />
+                <View android:background="@color/colorDividerGray"
+                    android:layout_height="match_parent"
+                    android:layout_width="1px"/>
+
+                <TextView android:id="@+id/time_table_thu_3" />
+                <View android:background="@color/colorDividerGray"
+                    android:layout_height="match_parent"
+                    android:layout_width="1px"/>
+
+                <TextView android:id="@+id/time_table_fri_3" />
+            </TableRow>
+            <View android:background="@color/colorDividerGray"
+                android:layout_height="1px"
+                android:layout_width="match_parent"/>
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/time_table_time_4"
+                    android:textSize="8dp"
+                    android:gravity="center"
+                    android:text="11:50\n12:40" />
+
+                <View android:background="@color/colorDividerGray"
+                    android:layout_height="match_parent"
+                    android:layout_width="1px"/>
+                <TextView android:id="@+id/time_table_mon_4" />
+                <View android:background="@color/colorDividerGray"
+                    android:layout_height="match_parent"
+                    android:layout_width="1px"/>
+
+                <TextView android:id="@+id/time_table_tue_4" />
+                <View android:background="@color/colorDividerGray"
+                    android:layout_height="match_parent"
+                    android:layout_width="1px"/>
+
+                <TextView android:id="@+id/time_table_wed_4" />
+                <View android:background="@color/colorDividerGray"
+                    android:layout_height="match_parent"
+                    android:layout_width="1px"/>
+
+                <TextView android:id="@+id/time_table_thu_4" />
+                <View android:background="@color/colorDividerGray"
+                    android:layout_height="match_parent"
+                    android:layout_width="1px"/>
+
+                <TextView android:id="@+id/time_table_fri_4" />
+            </TableRow>
+            <View android:background="@color/colorDividerGray"
+                android:layout_height="1px"
+                android:layout_width="match_parent"/>
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/time_table_time_5"
+                    android:textSize="8dp"
+                    android:gravity="center"
+                    android:text="12:45\n13:40" />
+                <View android:background="@color/colorDividerGray"
+                    android:layout_height="match_parent"
+                    android:layout_width="1px"/>
+
+                <TextView android:id="@+id/time_table_mon_5" />
+                <View android:background="@color/colorDividerGray"
+                    android:layout_height="match_parent"
+                    android:layout_width="1px"/>
+
+                <TextView android:id="@+id/time_table_tue_5" />
+                <View android:background="@color/colorDividerGray"
+                    android:layout_height="match_parent"
+                    android:layout_width="1px"/>
+
+                <TextView android:id="@+id/time_table_wed_5" />
+                <View android:background="@color/colorDividerGray"
+                    android:layout_height="match_parent"
+                    android:layout_width="1px"/>
+
+                <TextView android:id="@+id/time_table_thu_5" />
+                <View android:background="@color/colorDividerGray"
+                    android:layout_height="match_parent"
+                    android:layout_width="1px"/>
+                <TextView android:id="@+id/time_table_fri_5" />
+            </TableRow>
+            <View android:background="@color/colorDividerGray"
+                android:layout_height="1px"
+                android:layout_width="match_parent"/>
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/time_table_time_6"
+                    android:textSize="8dp"
+                    android:gravity="center"
+                    android:text="13:40\n14:35" />
+                <View android:background="@color/colorDividerGray"
+                    android:layout_height="match_parent"
+                    android:layout_width="1px"/>
+
+                <TextView android:id="@+id/time_table_mon_6" />
+                <View android:background="@color/colorDividerGray"
+                    android:layout_height="match_parent"
+                    android:layout_width="1px"/>
+
+                <TextView android:id="@+id/time_table_tue_6" />
+                <View android:background="@color/colorDividerGray"
+                    android:layout_height="match_parent"
+                    android:layout_width="1px"/>
+                <TextView android:id="@+id/time_table_wed_6" />
+                <View android:background="@color/colorDividerGray"
+                    android:layout_height="match_parent"
+                    android:layout_width="1px"/>
+
+                <TextView android:id="@+id/time_table_thu_6" />
+                <View android:background="@color/colorDividerGray"
+                    android:layout_height="match_parent"
+                    android:layout_width="1px"/>
+                <TextView android:id="@+id/time_table_fri_6" />
+            </TableRow>
+            <View android:background="@color/colorDividerGray"
+                android:layout_height="1px"
+                android:layout_width="match_parent"/>
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/time_table_time_7"
+                    android:textSize="8dp"
+                    android:gravity="center"
+                    android:text="14:40\n15:30" />
+                <View android:background="@color/colorDividerGray"
+                    android:layout_height="match_parent"
+                    android:layout_width="1px"/>
+                <TextView android:id="@+id/time_table_mon_7" />
+                <View android:background="@color/colorDividerGray"
+                    android:layout_height="match_parent"
+                    android:layout_width="1px"/>
+
+                <TextView android:id="@+id/time_table_tue_7" />
+                <View android:background="@color/colorDividerGray"
+                    android:layout_height="match_parent"
+                    android:layout_width="1px"/>
+                <TextView android:id="@+id/time_table_wed_7" />
+                <View android:background="@color/colorDividerGray"
+                    android:layout_height="match_parent"
+                    android:layout_width="1px"/>
+                <TextView android:id="@+id/time_table_thu_7" />
+                <View android:background="@color/colorDividerGray"
+                    android:layout_height="match_parent"
+                    android:layout_width="1px"/>
+                <TextView android:id="@+id/time_table_fri_7" />
+            </TableRow>
+            <View android:background="@color/colorDividerGray"
+                android:layout_height="1px"
+                android:layout_width="match_parent"/>
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/time_table_time_8"
+                    android:textSize="8dp"
+                    android:gravity="center"
+                    android:text="15:35\n16:30" />
+                <View android:background="@color/colorDividerGray"
+                android:layout_height="match_parent"
+                android:layout_width="1px"/>
+
+                <TextView android:id="@+id/time_table_mon_8" />
+                <View android:background="@color/colorDividerGray"
+                    android:layout_height="match_parent"
+                    android:layout_width="1px"/>
+
+                <TextView android:id="@+id/time_table_tue_8" />
+                <View android:background="@color/colorDividerGray"
+                    android:layout_height="match_parent"
+                    android:layout_width="1px"/>
+                <TextView android:id="@+id/time_table_wed_8" />
+                <View android:background="@color/colorDividerGray"
+                    android:layout_height="match_parent"
+                    android:layout_width="1px"/>
+                <TextView android:id="@+id/time_table_thu_8" />
+                <View android:background="@color/colorDividerGray"
+                    android:layout_height="match_parent"
+                    android:layout_width="1px"/>
+                <TextView android:id="@+id/time_table_fri_8" />
+            </TableRow>
+            <View android:background="@color/colorDividerGray"
+                android:layout_height="1px"
+                android:layout_width="match_parent"/>
+            <TableRow>
+                <TextView
+                    android:id="@+id/time_table_time_9"
+                    android:textSize="8dp"
+                    android:gravity="center"
+                    android:text="16:30\n17:25" />
+                <View android:background="@color/colorDividerGray"
+                android:layout_height="match_parent"
+                android:layout_width="1px"/>
+                <TextView android:id="@+id/time_table_mon_9" />
+                <View android:background="@color/colorDividerGray"
+                    android:layout_height="match_parent"
+                    android:layout_width="1px"/>
+                <TextView android:id="@+id/time_table_tue_9" />
+                <View android:background="@color/colorDividerGray"
+                    android:layout_height="match_parent"
+                    android:layout_width="1px"/>
+                <TextView android:id="@+id/time_table_wed_9" />
+                <View android:background="@color/colorDividerGray"
+                    android:layout_height="match_parent"
+                    android:layout_width="1px"/>
+                <TextView android:id="@+id/time_table_thu_9" />
+                <View android:background="@color/colorDividerGray"
+                    android:layout_height="match_parent"
+                    android:layout_width="1px"/>
+                <TextView android:id="@+id/time_table_fri_9" />
+            </TableRow>
+        </TableLayout>
+    </RelativeLayout>
+
+
+</android.support.constraint.ConstraintLayout>

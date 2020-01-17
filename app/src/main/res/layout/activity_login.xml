@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".Activity.LoginActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:orientation="horizontal"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:layout_marginBottom="6dp"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:orientation="vertical"
+            app:srcCompat="@mipmap/ic_splash"
+            tools:ignore="MissingConstraints" />
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/input_frame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/bg_box"
+        android:orientation="vertical"
+        android:padding="18dp"
+        android:elevation="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.4">
+
+        <TextView
+            android:id="@+id/login_wrong_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="15sp"
+            android:textColor="@color/colorPrimary"
+            android:text="@string/message_input_id"/>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:theme="@style/TextLabel">
+
+            <EditText
+                android:id="@+id/input_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:hint="@string/student_id"
+                android:inputType="number"
+                android:textColor="@color/colorPrimaryBlack"
+                android:textColorHint="@color/colorPrimary"
+                android:textSize="15sp"
+                android:theme="@style/EditTextTheme" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:theme="@style/TextLabel">
+
+            <EditText
+                android:id="@+id/input_pw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:textColor="@color/colorPrimaryBlack"
+                android:textColorHint="@color/colorPrimary"
+                android:textSize="15sp"
+                android:theme="@style/EditTextTheme" />
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:layout_marginBottom="14dp"
+            android:text="@string/message_please_knu_login" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/login_button"
+        style="@style/Custom.ButtonStyle"
+        android:layout_marginTop="18dp"
+        android:clickable="true"
+        android:text="@string/login"
+        android:textSize="16dp"
+        android:paddingLeft="38dp"
+        android:paddingRight="38dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/input_frame" />
+</android.support.constraint.ConstraintLayout>

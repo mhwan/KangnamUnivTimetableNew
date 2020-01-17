@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:fitsSystemWindows="true"
+    android:focusableInTouchMode="true"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.SearchView
+        android:id="@+id/schedule_search_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:iconifiedByDefault="false"
+        android:theme="@style/EditTextTheme"
+        app:queryHint="@string/message_search_schedule_hint"></android.support.v7.widget.SearchView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:visibility="gone"
+            android:id="@+id/schedule_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </android.support.v7.widget.RecyclerView>
+
+        <TextView
+            android:id="@+id/empty_messages"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorLightBlack"
+            android:textSize="12dp"
+            android:gravity="center"
+            android:layout_centerInParent="true"
+            android:text="@string/message_empty_this_schedule" />
+
+    </RelativeLayout>
+
+</LinearLayout>

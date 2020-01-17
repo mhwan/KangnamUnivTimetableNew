@@ -1,0 +1,77 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@android:color/white</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="MainTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@android:color/white</item>
+        <item name="windowActionBar">false</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="EditTextTheme">
+        <!-- colorControlNormal 포커스가 안되었을때 -->
+        <item name="colorControlNormal">@color/colorPrimaryDark</item>
+        <item name="colorControlActivated">@color/colorPrimaryDark</item>
+        <!-- colorControlActivated 포커스 되었을때 -->
+    </style>
+
+    <style name="TextLabel" parent="ThemeOverlay.AppCompat.Light">
+        <!-- Hint color and label color in FALSE state -->
+        <item name="android:textColorHint">@color/colorAccent</item>
+        <item name="android:textSize">13sp</item>
+        <!-- Label color in TRUE state and bar color FALSE and TRUE State -->
+        <item name="colorControlNormal">@color/colorPrimaryDark</item>
+        <item name="colorControlActivated">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="Custom.ButtonStyle" parent="@android:style/Widget.TextView">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:clickable">true</item>
+        <item name="android:background">@drawable/bg_general_button</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <style name="Custom.ButtonStyle.Negative" parent="@android:style/Widget.TextView">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:clickable">true</item>
+        <item name="android:background">@drawable/bg_negative_button</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="Custom.labelButtonStyle" parent="@android:style/Widget.TextView">
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:clickable">true</item>
+        <item name="android:background">@drawable/bg_custom_lable</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="CustomBasePreference">
+        <item name="android:background">@android:color/white</item>
+        <item name="android:foreground">?attr/selectableItemBackground</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:paddingLeft">14dp</item>
+        <item name="android:paddingRight">14dp</item>
+    </style>
+</resources>

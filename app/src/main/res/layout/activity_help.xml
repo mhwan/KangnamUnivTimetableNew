@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.HelpActivity">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="?attr/actionBarSize" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_gravity="bottom"
+        android:paddingEnd="@dimen/activity_horizontal_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingStart="@dimen/activity_horizontal_margin">
+
+        <Button
+            android:id="@+id/intro_btn_skip"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center"
+            android:text="@string/jump"
+            android:textColor="@android:color/white" />
+
+        <com.mhwan.kangnamunivtimetable.CustomUI.CircleIndicator
+            android:id="@+id/help_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:circle_count="4"
+            app:circle_margin="6dp"
+            app:circle_size="8dp"
+            android:layout_gravity="center"
+            app:non_select_circle_resource="@drawable/off_alpha_indicator"
+            app:select_circle_resource="@drawable/on_alpha_indicator">
+
+        </com.mhwan.kangnamunivtimetable.CustomUI.CircleIndicator>
+
+
+        <!-- This overlaps the next button in the last slide -->
+        <Button
+            android:id="@+id/intro_btn_finish"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center"
+            android:text="@string/finish"
+            android:textColor="@android:color/white"
+            android:visibility="gone" />
+
+        <ImageButton
+            android:id="@+id/intro_btn_next"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center"
+            android:padding="@dimen/activity_horizontal_margin"
+            app:srcCompat="@drawable/ic_chevron_right_black_24dp"
+            android:tint="@android:color/white" />
+
+    </FrameLayout>
+</android.support.design.widget.CoordinatorLayout>

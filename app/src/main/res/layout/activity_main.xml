@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:id="@+id/main_root_layout"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <include layout="@layout/layout_base_toolbar" />
+
+    <ScrollView
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:paddingLeft="6dp"
+            android:paddingRight="6dp"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+            <FrameLayout
+                android:id="@+id/main_table_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></FrameLayout>
+
+            <FrameLayout
+                android:layout_marginTop="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/main_shuttlbus_layout"></FrameLayout>
+
+            <FrameLayout
+                android:layout_marginTop="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="6dp"
+                android:id="@+id/main_schedule_layout"></FrameLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

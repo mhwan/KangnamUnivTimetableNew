@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/CustomBasePreference">
+
+    <ImageView
+        android:id="@+id/ic_go"
+        android:layout_width="14dp"
+        android:layout_height="16dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/ic_go" />
+    <LinearLayout
+        android:layout_marginRight="3dp"
+        android:layout_toLeftOf="@id/ic_go"
+        android:orientation="vertical"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+android:id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="설정내역"
+            android:textColor="@color/colorPrimaryBlack"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+android:id/summary"
+            android:layout_width="wrap_content"
+            android:text="이걸 설정을왜하고있을까"
+            android:textSize="12dp"
+            android:layout_marginTop="3dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorLightBlack"
+            android:layout_below="@android:id/title"
+            android:layout_alignLeft="@android:id/title"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+    </LinearLayout>
+
+
+</RelativeLayout>

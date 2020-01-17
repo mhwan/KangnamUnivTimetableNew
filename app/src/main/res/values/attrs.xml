@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CircleIndicatorss">
+        <attr name="circle_size" format="dimension" />
+        <attr name="circle_count" format="integer" />
+        <attr name="circle_margin" format="dimension" />
+        <attr name="select_circle_resource" format="reference" />
+        <attr name="animate_time" format="integer" />
+        <attr name="non_select_circle_resource" format="reference" />
+    </declare-styleable>
+    <declare-styleable name="CircleView">
+        <attr name="circle_background_color" format="color" />
+        <attr name="circle_border_color" format="color" />
+        <attr name="circle_border" format="dimension"/>
+    </declare-styleable>
+    <declare-styleable name="CheckableTextView">
+        <attr name="selected_text_color" format="color" />
+        <attr name="default_text_color" format="color" />
+        <attr name="checkable" format="boolean" />
+        <attr name="setCheck" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="CheckedCircleView">
+        <attr name="check" format="boolean" />
+        <attr name="bg_color" format="color" />
+    </declare-styleable>
+    <declare-styleable name="states">
+        <attr name="state_checked" format="boolean" />
+        <attr name="state_pressed" format="boolean" />
+        <attr name="state_notset" format="boolean" />
+    </declare-styleable>
+</resources>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/no_data_text"
+        android:layout_width="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content"
+        android:text="@string/message_empty_score"
+        android:textColor="@color/colorDividerGray"
+        android:textSize="12dp"
+        />
+
+    <HorizontalScrollView
+        android:id="@+id/top_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true">
+
+        <LinearLayout
+            android:id="@+id/previous_semester_frame"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="4dp"
+            android:orientation="horizontal"></LinearLayout>
+    </HorizontalScrollView>
+
+    <LinearLayout
+        android:id="@+id/previous_semester_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="6dp"
+                android:text="수강학점 :"
+                android:textColor="@android:color/white"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/semester_sum_unit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="24dp"
+                android:text="0"
+                android:textColor="@android:color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="6dp"
+                android:text="평균학점 :"
+                android:textColor="@android:color/white"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/semester_average_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.0"
+                android:textColor="@android:color/white"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/top_scroll"
+        android:layout_above="@id/previous_semester_result">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/manage_title_frame"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:id="@+id/title_manage_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="@string/score"
+                    android:textColor="@color/colorLightBlack"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/title_manage_unit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="12dp"
+                    android:layout_toLeftOf="@id/title_manage_score"
+                    android:text="@string/grade"
+                    android:textColor="@color/colorLightBlack"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/title_manage_classify"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginRight="12dp"
+                    android:text="@string/part"
+                    android:textColor="@color/colorLightBlack"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/title_manage_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/title_manage_classify"
+                    android:text="@string/nameSubject"
+                    android:textColor="@color/colorLightBlack"
+                    android:textSize="12sp" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorDividerGray" />
+
+            <LinearLayout
+                android:id="@+id/previous_score_frame"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"></LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

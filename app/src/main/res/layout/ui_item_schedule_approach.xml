@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:paddingLeft="12dp"
+    android:paddingRight="12dp"
+    android:id="@+id/approach_bg"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:layout_width="match_parent" android:layout_height="52dp">
+
+    <TextView
+        android:id="@+id/approach_remain"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:text="1시간 30분 남음"
+        android:textColor="@color/colorPrimary"
+        android:textSize="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_toLeftOf="@id/approach_remain"
+        android:layout_marginRight="6dp"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/approach_title"
+            android:text="제목제목"
+            android:textColor="@color/colorPrimaryBlack"
+            android:textSize="13dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/approach_enddate"
+            android:text="08/31까지"
+            android:layout_marginTop="2dp"
+            android:textColor="@color/colorLightBlack"
+            android:textSize="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+
+<View
+    android:id="@+id/list_divider"
+    android:layout_width="match_parent"
+    android:layout_height="1px"
+    android:background="@color/colorDividerGray"
+    android:layout_alignParentBottom="true"/>
+</RelativeLayout>
