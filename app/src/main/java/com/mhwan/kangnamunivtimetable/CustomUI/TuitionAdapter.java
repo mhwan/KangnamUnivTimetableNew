@@ -65,7 +65,7 @@ public class TuitionAdapter extends RecyclerView.Adapter<TuitionAdapter.ViewHold
             if (!a.isEmpty() && a.length() >2)
                 a = a.substring(0, a.length()-2);
 
-            Log.d("builder", a);
+            //Log.d("builder", a);
             viewHolder.extraText.setText(a);
 
             if (i == expandedPosition) {
@@ -79,8 +79,8 @@ public class TuitionAdapter extends RecyclerView.Adapter<TuitionAdapter.ViewHold
             }
 
         } else {
-            viewHolder.napbuCircle.setCircleBackgroundColor(ContextCompat.getColor(context, R.color.colorDarkRed));
-            viewHolder.napbuText.setTextColor(ContextCompat.getColor(context, R.color.colorDarkRed));
+            viewHolder.napbuCircle.setCircleBackgroundColor(ContextCompat.getColor(context, R.color.colorLightPink));
+            viewHolder.napbuText.setTextColor(ContextCompat.getColor(context, R.color.colorLightPink));
             viewHolder.napbuText.setText(item.pay_gubn);
             viewHolder.napbuAmount.setText(new DecimalFormat("###,###").format(Integer.parseInt(item.actual_sum))+"원");
             viewHolder.napbuDate.setText(item.pay_term);
@@ -91,6 +91,8 @@ public class TuitionAdapter extends RecyclerView.Adapter<TuitionAdapter.ViewHold
                 viewHolder.rotate_view.setVisibility(View.GONE);
 
                 StringBuilder builder = new StringBuilder("납부 계좌 : ");
+                if (item.bank_numb.contains("<br>"))
+                    item.bank_numb = item.bank_numb.replaceAll("<br>", "\\\n\\\t");
                 builder.append(item.bank_numb);
                 viewHolder.extraText.setText(builder.toString());
             }
@@ -114,19 +116,21 @@ public class TuitionAdapter extends RecyclerView.Adapter<TuitionAdapter.ViewHold
     public void onClick(View v) {
         ViewHolder holder = (ViewHolder) v.getTag();
 
-        if (expandedPosition == holder.getAdapterPosition()) {
-            expandedPosition = -1;
-            notifyItemChanged(holder.getAdapterPosition());
-            return;
+        if (tuitionList.get(holder.getAdapterPosition()).isPay == true) {
+            if (expandedPosition == holder.getAdapterPosition()) {
+                expandedPosition = -1;
+                notifyItemChanged(holder.getAdapterPosition());
+                return;
+            }
+            // Check for an expanded view, collapse if you find one
+            else if (expandedPosition >= 0) {
+                int prev = expandedPosition;
+                notifyItemChanged(prev);
+            }
+            // Set the current position to "expanded"
+            expandedPosition = holder.getAdapterPosition();
+            notifyItemChanged(expandedPosition);
         }
-        // Check for an expanded view, collapse if you find one
-        else if (expandedPosition >= 0) {
-            int prev = expandedPosition;
-            notifyItemChanged(prev);
-        }
-        // Set the current position to "expanded"
-        expandedPosition = holder.getAdapterPosition();
-        notifyItemChanged(expandedPosition);
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

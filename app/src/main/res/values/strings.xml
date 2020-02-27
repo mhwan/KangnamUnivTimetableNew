@@ -71,7 +71,7 @@
     <string name="name_navi_score">학점 계산, 관리</string>
     <string name="name_navi_schedule">과제, 일정 관리</string>
     <string name="name_navi_campusmap">캠퍼스맵, 교내 건물 정보</string>
-    <string name="name_navi_scholarship">등록, 장학금 관리</string>
+    <string name="name_navi_scholarship">등록금, 장학금 관리</string>
     <string name="name_navi_email">이메일</string>
     <string name="name_navi_search">교직원 검색</string>
     <string name="name_total_complete_grade">전체 이수학점</string>

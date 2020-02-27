@@ -56,6 +56,18 @@ public class TuitionFragment extends Fragment implements ScholarshipActivity.Upd
         //do nothing
     }
 
+    /*
+    private ArrayList<KnuTuition.TuitionItem> makeSampleList(ArrayList<KnuTuition.TuitionItem> list){
+        KnuTuition.TuitionItem tuitionItem = new KnuTuition("", "").new TuitionItem();
+        tuitionItem.isPay = false;
+        tuitionItem.pay_gubn = "미납";
+        tuitionItem.pay_term = "20140124 - 20140312";
+        tuitionItem.actual_sum = "1231231";
+        tuitionItem.bank_numb = "국민은행 234234234234<br>기업은행 234234234234<br>신한은행 234234334243";
+        list.add(0, tuitionItem);
+
+        return list;
+    }*/
     @Override
     public void updateTuitionData(ArrayList<KnuTuition.TuitionItem> tuitionItems) {
         if (tuitionItems == null || (tuitionItems!=null && tuitionItems.size() == 0 )) {

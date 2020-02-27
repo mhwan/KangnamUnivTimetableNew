@@ -53,6 +53,7 @@ public class KnuTuition {
         public String bank_numb;
         public boolean isPay;
         public String semester;
+        public TuitionItem(){}
     }
 
     public TuitionSemester[] doGetAvailableSemesters() {
@@ -200,7 +201,7 @@ public class KnuTuition {
         result = result.replaceAll("amnt_0007", "pay_ot");
         result = result.replaceAll("used_term", "pay_term");
 
-        System.out.print(result);
+        //System.out.print(result);
         JsonParser jsonParser = new JsonParser();
         return (JsonObject) jsonParser.parse(result);
     }
