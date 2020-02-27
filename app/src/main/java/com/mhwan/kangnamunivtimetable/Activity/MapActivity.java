@@ -57,6 +57,8 @@ public class MapActivity extends BaseActivity implements MapView.OpenAPIKeyAuthe
     private MapView mapView;
     private Spinner spinner;
     private Bundle bundle = null;
+    private String message = null;
+    private boolean not_found_loc = false;
     public static String GET_INFO_URL = "http://web.kangnam.ac.kr/menu/183cf81ad3b35044012126decdcb581a.do?";
     private HashMap<Integer, String> list = new HashMap<Integer, String>() {{
         put(0, "bldgCode=101&lat=37.2765655&lng=127.133972");
@@ -84,6 +86,11 @@ public class MapActivity extends BaseActivity implements MapView.OpenAPIKeyAuthe
         setToolbar(R.id.base_toolbar, R.layout.toolbar_main);
 
         index = getIntent().getIntExtra("loc_index", 14);
+        message = getIntent().getStringExtra("loc_extra_string");
+        if (index < 0) {
+            index = 14;
+            not_found_loc = true;
+        }
         getInfoWork();
         initView();
 
@@ -174,6 +181,12 @@ public class MapActivity extends BaseActivity implements MapView.OpenAPIKeyAuthe
         });
         setSpinner();
 
+        if (message !=null){
+            String n_m = message;
+            if (not_found_loc)
+                n_m+= ("\n"+getString(R.string.message_no_locations));
+            Toast.makeText(getContext(), n_m, Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void selectMap(int id) {
@@ -199,11 +212,11 @@ public class MapActivity extends BaseActivity implements MapView.OpenAPIKeyAuthe
 
     private void rotateButton(boolean click) {
         if (bottomSheetBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED) {
-            button_dropdown.animate().rotation(180).start();
+            button_dropdown.animate().rotation(360).start();
             if (click)
                 bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
         } else if (bottomSheetBehavior.getState() == BottomSheetBehavior.STATE_COLLAPSED) {
-            button_dropdown.animate().rotation(360).start();
+            button_dropdown.animate().rotation(180).start();
             if (click)
                 bottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
         }
@@ -354,5 +367,10 @@ public class MapActivity extends BaseActivity implements MapView.OpenAPIKeyAuthe
     @Override
     protected void hideKeyboard() {
         AppUtility.getAppinstance().hideKeyboard(getActivity());
+    }
+
+    @Override
+    protected void finishActivity() {
+        this.finish();
     }
 }

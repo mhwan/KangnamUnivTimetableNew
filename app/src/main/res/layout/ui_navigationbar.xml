@@ -10,182 +10,300 @@
     android:id="@+id/navi_header"
     layout="@layout/nav_header_base" />
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:orientation="vertical"
         android:layout_height="match_parent">
-
-        <RelativeLayout
-            android:paddingTop="14dp"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:id="@+id/button_drawer_ttable"
-            android:clickable="true"
-            android:background="?attr/selectableItemBackground"
-            android:paddingBottom="14dp"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <ImageView
-                android:layout_centerVertical="true"
-                android:id="@+id/image_ttable"
-                android:layout_alignParentLeft="true"
-                android:layout_width="17dp"
-                android:layout_height="17dp"
-                app:srcCompat="@drawable/ic_dashboard_black_24dp"/>
+            android:orientation="vertical"
+            android:layout_height="match_parent">
 
-            <TextView
-                android:layout_centerVertical="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:textColor="@android:color/white"
-                android:layout_marginLeft="36dp"
-                android:layout_alignParentLeft="true"
-                android:text="@string/name_my_timetable" />
+            <RelativeLayout
+                android:paddingTop="14dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:id="@+id/button_drawer_ttable"
+                android:clickable="true"
+                android:background="?attr/selectableItemBackground"
+                android:paddingBottom="14dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_centerVertical="true"
+                    android:id="@+id/image_ttable"
+                    android:layout_alignParentLeft="true"
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    app:srcCompat="@drawable/ic_dashboard_black_24dp"/>
 
-        </RelativeLayout>
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/white"
+                    android:layout_marginLeft="36dp"
+                    android:layout_alignParentLeft="true"
+                    android:text="@string/name_my_timetable" />
 
-        <View
-            android:layout_marginLeft="14dp"
-            android:layout_marginRight="14dp"
-            android:layout_width="match_parent"
-            android:layout_height="1px"
-            android:background="@android:color/white"/>
-        <RelativeLayout
-            android:paddingTop="14dp"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:paddingBottom="14dp"
-            android:id="@+id/button_drawer_grade"
-            android:clickable="true"
-            android:background="?attr/selectableItemBackground"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <ImageView
-                android:layout_centerVertical="true"
-                android:id="@+id/image_grade"
-                android:layout_alignParentLeft="true"
-                android:layout_width="17dp"
-                android:layout_height="17dp"
-                app:srcCompat="@drawable/ic_school_black_24dp"/>
+            </RelativeLayout>
 
-            <TextView
-                android:layout_centerVertical="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="36dp"
-                android:textSize="16sp"
-                android:textColor="@android:color/white"
-                android:text="@string/name_navi_score" />
+            <View
+                android:layout_marginLeft="14dp"
+                android:layout_marginRight="14dp"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@android:color/white"/>
+            <RelativeLayout
+                android:paddingTop="14dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="14dp"
+                android:id="@+id/button_drawer_grade"
+                android:clickable="true"
+                android:background="?attr/selectableItemBackground"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_centerVertical="true"
+                    android:id="@+id/image_grade"
+                    android:layout_alignParentLeft="true"
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    app:srcCompat="@drawable/ic_school_black_24dp"/>
 
-        </RelativeLayout>
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="36dp"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/white"
+                    android:text="@string/name_navi_score" />
 
-        <View
-            android:layout_marginLeft="14dp"
-            android:layout_marginRight="14dp"
-            android:layout_width="match_parent"
-            android:layout_height="1px"
-            android:background="@android:color/white"/>
-        <RelativeLayout
-            android:paddingTop="14dp"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:id="@+id/button_drawer_report"
-            android:clickable="true"
-            android:background="?attr/selectableItemBackground"
-            android:paddingBottom="14dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <ImageView
-                android:layout_centerVertical="true"
-                android:id="@+id/image_report"
-                android:layout_alignParentLeft="true"
-                android:layout_width="17dp"
-                android:layout_height="17dp"
-                app:srcCompat="@drawable/ic_event_note_black_24dp"/>
+            </RelativeLayout>
 
-            <TextView
-                android:layout_centerVertical="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:textColor="@android:color/white"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="36dp"
-                android:text="@string/name_navi_schedule" />
+            <View
+                android:layout_marginLeft="14dp"
+                android:layout_marginRight="14dp"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@android:color/white"/>
+            <RelativeLayout
+                android:paddingTop="14dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:id="@+id/button_drawer_report"
+                android:clickable="true"
+                android:background="?attr/selectableItemBackground"
+                android:paddingBottom="14dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_centerVertical="true"
+                    android:id="@+id/image_report"
+                    android:layout_alignParentLeft="true"
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    app:srcCompat="@drawable/ic_event_note_black_24dp"/>
 
-        </RelativeLayout>
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/white"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="36dp"
+                    android:text="@string/name_navi_schedule" />
 
-        <View
-            android:layout_marginLeft="14dp"
-            android:layout_marginRight="14dp"
-            android:layout_width="match_parent"
-            android:layout_height="1px"
-            android:background="@android:color/white"/>
-        <RelativeLayout
-            android:paddingTop="14dp"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:id="@+id/button_drawer_map"
-            android:clickable="true"
-            android:background="?attr/selectableItemBackground"
-            android:paddingBottom="14dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <ImageView
-                android:layout_centerVertical="true"
-                android:id="@+id/image_map"
-                android:layout_alignParentLeft="true"
-                android:layout_width="17dp"
-                android:layout_height="17dp"
-                app:srcCompat="@drawable/ic_map_black_24dp"/>
+            </RelativeLayout>
 
-            <TextView
-                android:layout_centerVertical="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="36dp"
-                android:textSize="16sp"
-                android:textColor="@android:color/white"
-                android:text="@string/name_campusMap" />
+            <View
+                android:layout_marginLeft="14dp"
+                android:layout_marginRight="14dp"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@android:color/white"/>
 
-        </RelativeLayout>
-        <View
-            android:layout_marginLeft="14dp"
-            android:layout_marginRight="14dp"
-            android:layout_width="match_parent"
-            android:layout_height="1px"
-            android:background="@android:color/white"/>
-        <RelativeLayout
-            android:paddingTop="14dp"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:id="@+id/button_drawer_setting"
-            android:clickable="true"
-            android:background="?attr/selectableItemBackground"
-            android:paddingBottom="14dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <ImageView
-                android:layout_centerVertical="true"
-                android:id="@+id/image_setting"
-                android:layout_alignParentLeft="true"
-                android:layout_width="17dp"
-                android:layout_height="17dp"
-                app:srcCompat="@drawable/ic_settings_black_24dp"/>
+            <RelativeLayout
+                android:paddingTop="14dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:id="@+id/button_drawer_scholarship"
+                android:clickable="true"
+                android:background="?attr/selectableItemBackground"
+                android:paddingBottom="14dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_centerVertical="true"
+                    android:id="@+id/image_scholarship"
+                    android:layout_alignParentLeft="true"
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    app:srcCompat="@drawable/ic_account_balance_black_24dp"/>
 
-            <TextView
-                android:layout_centerVertical="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:textColor="@android:color/white"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="36dp"
-                android:text="@string/name_setting" />
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/white"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="36dp"
+                    android:text="@string/name_navi_scholarship" />
 
-        </RelativeLayout>
-    </LinearLayout>
+            </RelativeLayout>
+
+            <View
+                android:layout_marginLeft="14dp"
+                android:layout_marginRight="14dp"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@android:color/white"/>
+
+            <RelativeLayout
+                android:paddingTop="14dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:id="@+id/button_drawer_search"
+                android:clickable="true"
+                android:background="?attr/selectableItemBackground"
+                android:paddingBottom="14dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_centerVertical="true"
+                    android:id="@+id/image_search"
+                    android:layout_alignParentLeft="true"
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    app:srcCompat="@drawable/ic_search_black_24dp"/>
+
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="36dp"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/white"
+                    android:text="@string/name_navi_search" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_marginLeft="14dp"
+                android:layout_marginRight="14dp"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@android:color/white"/>
+            <RelativeLayout
+                android:paddingTop="14dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:id="@+id/button_drawer_map"
+                android:clickable="true"
+                android:background="?attr/selectableItemBackground"
+                android:paddingBottom="14dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_centerVertical="true"
+                    android:id="@+id/image_map"
+                    android:layout_alignParentLeft="true"
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    app:srcCompat="@drawable/ic_map_black_24dp"/>
+
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="36dp"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/white"
+                    android:text="@string/name_navi_campusmap" />
+
+            </RelativeLayout>
+
+            <!--
+            <View
+                android:layout_marginLeft="14dp"
+                android:layout_marginRight="14dp"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@android:color/white"/>
+
+            <RelativeLayout
+                android:paddingTop="14dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:id="@+id/button_drawer_email"
+                android:clickable="true"
+                android:background="?attr/selectableItemBackground"
+                android:paddingBottom="14dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_centerVertical="true"
+                    android:id="@+id/image_email"
+                    android:layout_alignParentLeft="true"
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    app:srcCompat="@drawable/ic_email_black_24dp"/>
+
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="36dp"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/white"
+                    android:text="@string/name_navi_email" />
+
+            </RelativeLayout>
+            -->
+            <View
+                android:layout_marginLeft="14dp"
+                android:layout_marginRight="14dp"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@android:color/white"/>
+            <RelativeLayout
+                android:paddingTop="14dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:id="@+id/button_drawer_setting"
+                android:clickable="true"
+                android:background="?attr/selectableItemBackground"
+                android:paddingBottom="14dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_centerVertical="true"
+                    android:id="@+id/image_setting"
+                    android:layout_alignParentLeft="true"
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    app:srcCompat="@drawable/ic_settings_black_24dp"/>
+
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/white"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="36dp"
+                    android:text="@string/name_setting" />
+
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
 </LinearLayout>

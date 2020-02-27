@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".Activity.EmployeeSearchActivity">
+
+    <include layout="@layout/layout_base_toolbar" />
+
+    <android.support.v7.widget.SearchView
+        android:id="@+id/searchview"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:layout_width="match_parent"
+        app:iconifiedByDefault="false"
+        android:theme="@style/EditTextTheme"
+        android:queryBackground="@android:color/transparent"
+        app:queryBackground="@android:color/transparent"
+        app:queryHint="@string/message_search_employee_hint"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_box"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/emp_recyclerview"
+        android:visibility="gone"
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

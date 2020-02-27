@@ -63,7 +63,7 @@ public class KnuGrade {
             if (object.get("result").getAsString().equals("success")) {
                 JsonArray array = object.get("data").getAsJsonArray();
                 Gson gson = new Gson();
-                Semester[] semesters = (Semester[]) reverse(gson.fromJson(array, Semester[].class));
+                Semester[] semesters = (Semester[]) AppUtility.getAppinstance().reverseArray(gson.fromJson(array, Semester[].class));
                 return semesters;
             }
 
@@ -87,7 +87,7 @@ public class KnuGrade {
                     grade = gson.fromJson(o1, Grade.class);
                     JsonElement result = object.get("data2");
                     JsonArray o2 = changeString(gson.toJson(result));
-                    grade.subjects = (Subject[]) reverse(gson.fromJson(o2, Subject[].class));
+                    grade.subjects = (Subject[]) AppUtility.getAppinstance().reverseArray(gson.fromJson(o2, Subject[].class));
                 }
 
                 gradeList.put(semester, grade);
@@ -133,11 +133,7 @@ public class KnuGrade {
         return "cors_gubn=1&stnt_numb=" + id + "&schl_year=" + y + "&schl_smst=" + s;
     }
 
-    public static Object[] reverse(Object[] arr) {
-        List<Object> list = Arrays.asList(arr);
-        Collections.reverse(list);
-        return list.toArray();
-    }
+
 
     public static ArrayList<Semester> sortSemester(ArrayList<Semester> key) {
         Collections.sort(key, new Comparator<Semester>() {

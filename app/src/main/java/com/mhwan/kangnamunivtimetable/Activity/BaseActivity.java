@@ -57,6 +57,9 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
             findViewById(R.id.button_drawer_setting).setOnClickListener(this);
             findViewById(R.id.button_drawer_report).setOnClickListener(this);
             findViewById(R.id.button_drawer_map).setOnClickListener(this);
+            findViewById(R.id.button_drawer_scholarship).setOnClickListener(this);
+            //findViewById(R.id.button_drawer_email).setOnClickListener(this);
+            findViewById(R.id.button_drawer_search).setOnClickListener(this);
             toolbarview.findViewById(R.id.main_toolbar_drawer).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -151,16 +154,25 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
                 intent = new Intent(getActivity(), SettingActivity.class);
                 break;
             case R.id.button_drawer_map:
-                intent = new Intent(getActivity(), MapActivity.class);
+                if (!getToolbarTitle().equals(getString(R.string.name_campusMap)))
+                    intent = new Intent(getActivity(), MapActivity.class);
                 break;
             case R.id.nav_button_logout:
                 showLogoutDialog();
                 break;
-            default:
-                intent = new Intent(getActivity(), MainActivity.class);
+            case R.id.button_drawer_scholarship:
+                intent = new Intent(getActivity(), ScholarshipActivity.class);
+                break;
+                /*
+            case R.id.button_drawer_email :
+                intent = new Intent(getActivity(), EmailActivity.class);
+                break;*/
+            case R.id.button_drawer_search :
+                intent = new Intent(getActivity(), EmployeeSearchActivity.class);
+                break;
         }
 
-        if (id != R.id.nav_button_logout) {
+        if (id != R.id.nav_button_logout && intent != null) {
             intent.putExtra("cookies", preference.getCookies());
             startNewActivity(intent);
         }
@@ -169,7 +181,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
 
     protected void startNewActivity(Intent intent) {
         startActivity(intent);
-        finish();
+        finishActivity();
     }
 
     protected abstract String getToolbarTitle();
@@ -182,5 +194,5 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         return getActivity();
     }
 
-
+    protected abstract void finishActivity();
 }

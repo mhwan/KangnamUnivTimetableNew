@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="64dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_alignParentLeft="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="14dp"
+        android:layout_centerVertical="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="배명환"
+            android:id="@+id/name"
+            android:textSize="13sp"
+            android:textColor="@color/colorPrimaryBlack" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="소프트웨어응용학"
+            android:layout_marginTop="2dp"
+            android:id="@+id/affiliation"
+            android:textSize="11sp"
+            android:textColor="@color/colorLightBlack" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="경천관 403호"
+            android:id="@+id/locations"
+            android:textSize="11sp"
+            android:textColor="@color/colorLightBlack"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/call"
+            android:layout_width="42dp"
+            android:layout_height="42dp">
+            <com.mhwan.kangnamunivtimetable.CustomUI.CircleView
+                android:layout_width="match_parent"
+                app:circle_background_color="@color/colorBackgroundLightBlue"
+                android:foreground="?selectableItemBackgroundBorderless"
+                android:layout_height="match_parent"></com.mhwan.kangnamunivtimetable.CustomUI.CircleView>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tint="@color/colorPieLightGreen"
+                android:layout_centerInParent="true"
+                android:padding="2dp"
+                app:srcCompat="@drawable/ic_call_black_24dp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/loc"
+            android:layout_marginLeft="4dp"
+            android:layout_width="42dp"
+            android:layout_height="42dp">
+            <com.mhwan.kangnamunivtimetable.CustomUI.CircleView
+                android:layout_width="match_parent"
+                app:circle_background_color="@color/colorBackgroundLightBlue"
+                android:foreground="?selectableItemBackgroundBorderless"
+                android:layout_height="match_parent"></com.mhwan.kangnamunivtimetable.CustomUI.CircleView>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tint="@color/colorPrimary"
+                android:layout_centerInParent="true"
+                android:padding="2dp"
+                app:srcCompat="@drawable/ic_marker_general"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/email"
+            android:layout_marginLeft="4dp"
+            android:layout_width="42dp"
+            android:layout_height="42dp">
+            <com.mhwan.kangnamunivtimetable.CustomUI.CircleView
+                android:layout_width="match_parent"
+                app:circle_background_color="@color/colorBackgroundLightBlue"
+                android:foreground="?selectableItemBackgroundBorderless"
+                android:layout_height="match_parent"></com.mhwan.kangnamunivtimetable.CustomUI.CircleView>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tint="@color/colorLightPink"
+                android:layout_centerInParent="true"
+                android:padding="2dp"
+                app:srcCompat="@drawable/ic_email_black_24dp"/>
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

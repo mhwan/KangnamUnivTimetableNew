@@ -105,6 +105,10 @@ public class AppUtility {
             string = string.replace("샬", "샬롬관 ");
         } else if (string.contains("운")) {
             string = string.replace("운", "운동장 ");
+        } else if (string.contains("심산")) {
+            string = string.replace("심산", "심전산학관 ");
+        } else if (string.contains("본")) {
+            string = string.replace("본", "본관 ");
         }
         return string;
     }
@@ -142,6 +146,12 @@ public class AppUtility {
         JsonObject result = new JsonParser().parse(string).getAsJsonObject();
         return result;
     }
+    public Object[] reverseArray(Object[] arr) {
+        List<Object> list = Arrays.asList(arr);
+        Collections.reverse(list);
+        return list.toArray();
+    }
+
 
     public boolean isNetworkConnection() {
         ConnectivityManager connectivityManager = (ConnectivityManager) AppContext.getContext().getSystemService(Context.CONNECTIVITY_SERVICE);

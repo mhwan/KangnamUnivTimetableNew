@@ -260,4 +260,9 @@ public class ScoreActivity extends BaseActivity {
     public interface UpdateData {
         void updateView(HashMap<KnuGrade.Semester, KnuGrade.Grade> gradelist);
     }
+
+    @Override
+    protected void finishActivity() {
+        this.finish();
+    }
 }

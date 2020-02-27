@@ -233,4 +233,9 @@ public class ScheduleActivity extends BaseActivity {
         this.activityResultListener = listener;
     }
 
+    @Override
+    protected void finishActivity() {
+        this.finish();
+    }
+
 }

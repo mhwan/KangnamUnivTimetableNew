@@ -83,6 +83,11 @@
         <item>학사일정표</item>
         <item>지난학기</item>
     </string-array>
+
+    <string-array name="Scholarship_name">
+        <item>등록금 납부현황</item>
+        <item>장학금 내역</item>
+    </string-array>
     <string-array name="Alarm_time_opts">
         <item>0</item>
         <item>1</item>

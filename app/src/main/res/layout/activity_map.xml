@@ -50,7 +50,8 @@
                     android:layout_height="wrap_content"
                     android:background="@null"
                     android:layout_gravity="center_vertical"
-                    android:src="@drawable/ic_arrow_drop_down_circle_black_48dp"/>
+                    android:rotation="180"
+                    app:srcCompat="@drawable/ic_arrow_drop_down_circle_black_48dp"/>
                 <Spinner
                     android:id="@+id/map_location_spinner"
                     android:layout_marginLeft="12dp"

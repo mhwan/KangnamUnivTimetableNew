@@ -320,4 +320,9 @@ public class SettingActivity extends BaseActivity {
             return false;
         }
     }
+
+    @Override
+    protected void finishActivity() {
+        this.finish();
+    }
 }

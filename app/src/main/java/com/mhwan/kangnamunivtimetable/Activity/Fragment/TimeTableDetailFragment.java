@@ -175,6 +175,8 @@ public class TimeTableDetailFragment extends BottomSheetDialogFragment implement
         String[] locations = getContext().getResources().getStringArray(R.array.Building_name_array);
         List<String> arr = Arrays.asList(locations);
 
+        if (loc.equals("심전산학관"))
+            return 11;
         if (arr.contains(loc))
             return arr.indexOf(loc);
         return -1;

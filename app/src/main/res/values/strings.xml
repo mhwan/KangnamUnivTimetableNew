@@ -11,7 +11,6 @@
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
-
     <string name="calculate_grade_title">이번학기 성적 계산</string>
     <string name="previous_grade_title">지난학기 성적</string>
     <string name="Score_hint">성적</string>
@@ -66,10 +65,15 @@
     <string name="name_campusMap">캠퍼스 맵</string>
     <string name="name_schedule">과제 및 일정관리</string>
     <string name="name_score">성적계산 및 관리</string>
+    <string name="name_scholarship">등록 및 장학금관리</string>
     <string name="name_setting">앱 설정</string>
     <string name="name_my_timetable">내 시간표</string>
     <string name="name_navi_score">학점 계산, 관리</string>
     <string name="name_navi_schedule">과제, 일정 관리</string>
+    <string name="name_navi_campusmap">캠퍼스맵, 교내 건물 정보</string>
+    <string name="name_navi_scholarship">등록, 장학금 관리</string>
+    <string name="name_navi_email">이메일</string>
+    <string name="name_navi_search">교직원 검색</string>
     <string name="name_total_complete_grade">전체 이수학점</string>
     <string name="name_total_avg_grade">전체 평균학점</string>
     <string name="name_calculate_grade_semester">이번학기 학점계산</string>
@@ -125,9 +129,14 @@
     <string name="message_please_knu_login">* 강남대학교 통합 로그인을 해주세요</string>
     <string name="message_search_map_hint">층 또는 장소 검색</string>
     <string name="message_search_schedule_hint">과목 또는 일정 검색</string>
+    <string name="message_search_employee_hint">교직원 이름 또는 부서 검색</string>
+    <string name="message_search_no_result">검색결과가 없습니다. 다시 검색해주세요</string>
     <string name="message_really_close">입력한 내용이 있습니다. 정말로 닫을까요?</string>
     <string name="message_cancel_login">로그인에 실패했습니다. 네트워크 상태를 확인하세요.</string>
+    <string name="message_more_than_two">2글자 이상 입력해주세요.</string>
     <string name="message_empty_score">지난학기 성적 데이터가 없습니다.</string>
+    <string name="message_no_network">네트워크 상태를 확인해주세요.</string>
+    <string name="message_no_locations">위치정보를 찾을 수 없어 샬롬관으로 선택되었습니다.</string>
     <string name="message_empty_this_schedule">아직 일정이 없습니다. 얼른 일정을 추가해주세요 \n 만약 추가한 데이터가 안보이시면 다시 창을 키시거나 정렬 방법을 바꿔보세요.</string>
     <string name="message_cancel_building_info">건물 정보를 가져오는데 실패했습니다. 네트워크 상태를 학인하세요.</string>
     <string name="message_cancel_grade_info">학점을 가져오는데 실패했습니다. 네트워크 상태를 확인하세요.</string>
@@ -136,6 +145,9 @@
     <string name="message_empty_timetable">시간표 데이터가 없습니다</string>
     <string name="message_no_timetable_data">시간표 데이터가 없습니다. 수강신청 이후 앱을 실행시켜보세요.</string>
     <string name="message_no_score_calculate">시간표 데이터가 없어 이번학기 학점계산이 불가능합니다.</string>
+    <string name="message_empty_tuition">등록금 데이터가 없습니다.</string>
+    <string name="message_empty_scholarship">장학금 데이터가 없습니다.</string>
+    <string name="message_cancel_tuition_scholarship">등록금 및 장학금 데이터를 가져오는데 실패했습니다. 네트워크 상태를 확인하세요.</string>
     <string name="message_first_information_map_open">지도 뷰 아래 흰부분을 위로 올리면 해당 건물의 자세한 정보를 볼 수 있습니다.</string>
     <string name="message_input_id">학번을 입력해주세요</string>
     <string name="message_input_pw">비밀번호를 입력해주세요</string>

@@ -163,5 +163,9 @@ public class MainActivity extends BaseActivity implements TimeTableFragment.onTa
     public void onChangeColor(int id, int color) {
         timeTableFragment.changeBackgroundColor(color, id);
     }
+    @Override
+    protected void finishActivity() {
+        this.finish();
+    }
 
 }
