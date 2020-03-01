@@ -352,7 +352,13 @@ public class CreateScheduleActivity extends AppCompatActivity implements View.On
     }
 
     private String[] getSubjectList() {
-        List<String> list = new LinkedList<>(Arrays.asList(helper.getSubjectList()));
+        String[] slist = helper.getSubjectList();
+        List<String> list;
+        if (slist == null || slist.length == 0)
+            list = new LinkedList<String>();
+        else
+            list = new LinkedList<>(Arrays.asList(helper.getSubjectList()));
+
         list.add(0, getString(R.string.no_subject));
         return list.toArray(new String[list.size()]);
     }

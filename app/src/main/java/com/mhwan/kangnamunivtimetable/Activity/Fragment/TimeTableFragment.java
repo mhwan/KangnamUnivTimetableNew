@@ -24,6 +24,7 @@ import com.mhwan.kangnamunivtimetable.Items.Days;
 import com.mhwan.kangnamunivtimetable.Items.TimetableSubject;
 import com.mhwan.kangnamunivtimetable.R;
 import com.mhwan.kangnamunivtimetable.Util.AccountPreference;
+import com.mhwan.kangnamunivtimetable.Util.AppContext;
 import com.mhwan.kangnamunivtimetable.Util.AppUtility;
 import com.mhwan.kangnamunivtimetable.Util.GetTimeTableTask;
 
@@ -120,7 +121,7 @@ public class TimeTableFragment extends Fragment implements View.OnClickListener,
         } else {
             view.findViewById(R.id.time_table_border).setVisibility(View.GONE);
             empty_textview.setVisibility(View.VISIBLE);
-            Toast.makeText(getContext(), getString(R.string.message_no_timetable_data), Toast.LENGTH_SHORT).show();
+            Toast.makeText(AppContext.getContext(), AppContext.getContext().getString(R.string.message_no_timetable_data), Toast.LENGTH_SHORT).show();
         }
     }
 

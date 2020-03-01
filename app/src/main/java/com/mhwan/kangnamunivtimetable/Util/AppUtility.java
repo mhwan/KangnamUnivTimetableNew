@@ -277,10 +277,11 @@ public class AppUtility {
         Calendar now = Calendar.getInstance();
         String year = String.valueOf(now.get(Calendar.YEAR));
         Calendar compare = Calendar.getInstance();
-        compare.set(Integer.parseInt(year), Calendar.MARCH, 01);
-
+        compare.set(Integer.parseInt(year), Calendar.MARCH, 01, 0, 0);
+        compare.set(Calendar.SECOND, 0);
+        compare.set(Calendar.MILLISECOND, 0);
         //3월 이전
-        if (now.before(compare))
+        if (compare.compareTo(now) > 0)
             return (Integer.parseInt(year) - 1) + "-2";
         else {
             compare.set(Integer.parseInt(year), Calendar.SEPTEMBER, 01);
@@ -296,6 +297,8 @@ public class AppUtility {
         String year = String.valueOf(now.get(Calendar.YEAR));
         Calendar compare = Calendar.getInstance();
         compare.set(Integer.parseInt(year), Calendar.MARCH, 01);
+        compare.set(Calendar.SECOND, 0);
+        compare.set(Calendar.MILLISECOND, 0);
 
         //3월 이전
         if (now.before(compare))
