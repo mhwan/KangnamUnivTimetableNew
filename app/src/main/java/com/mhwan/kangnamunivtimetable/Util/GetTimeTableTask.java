@@ -54,8 +54,10 @@ public class GetTimeTableTask extends AsyncTask<Void, Void, Object> {
             }
         } else {
             //오류발생
-            if (listener != null)
+            if (listener != null) {
                 listener.onDataSet(null);
+                Toast.makeText(AppContext.getContext(), AppContext.getContext().getString(R.string.message_error_get_timetable_task), Toast.LENGTH_SHORT).show();
+            }
         }
     }
 

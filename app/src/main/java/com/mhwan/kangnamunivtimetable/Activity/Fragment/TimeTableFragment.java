@@ -252,7 +252,9 @@ public class TimeTableFragment extends Fragment implements View.OnClickListener,
 
     @Override
     public void onDataSet(ArrayList<TimetableSubject> list) {
-        dbHelper.addAllTimeTable(list);
+        if (list != null) {
+            dbHelper.addAllTimeTable(list);
+        }
         this.timetableSubjects = dbHelper.getAllTimeTable();
         getViewSize();
     }

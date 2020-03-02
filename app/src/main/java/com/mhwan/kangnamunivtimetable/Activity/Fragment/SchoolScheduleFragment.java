@@ -14,6 +14,7 @@ import android.webkit.WebView;
 import android.widget.Toast;
 
 import com.mhwan.kangnamunivtimetable.R;
+import com.mhwan.kangnamunivtimetable.Util.AppContext;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -90,7 +91,7 @@ public class SchoolScheduleFragment extends Fragment {
             super.onPostExecute(result);
             //Log.d("APP", "1");
             if (result == "error")
-                Toast.makeText(getContext(), getString(R.string.message_cancel_school_schedule), Toast.LENGTH_SHORT).show();
+                Toast.makeText(AppContext.getContext(), AppContext.getContext().getString(R.string.message_cancel_school_schedule), Toast.LENGTH_SHORT).show();
 
             webView.loadDataWithBaseURL(URL_SCHEDULE, result, mime, encoding, "");
         }

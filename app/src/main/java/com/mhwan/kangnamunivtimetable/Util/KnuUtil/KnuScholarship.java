@@ -51,10 +51,14 @@ public class KnuScholarship {
 
                 ScholarshipItem[] arr = (ScholarshipItem []) (gson.fromJson(array, ScholarshipItem[].class));
 
-                result = new ArrayList<>();
-                for (ScholarshipItem item : arr) {
-                    item.semester = item.year+"-"+item.semester;
-                    result.add(item);
+                if (arr != null && arr.length > 0) {
+                    result = new ArrayList<>();
+                    for (ScholarshipItem item : arr) {
+                        if (item != null) {
+                            item.semester = item.year + "-" + item.semester;
+                            result.add(item);
+                        }
+                    }
                 }
             }
 

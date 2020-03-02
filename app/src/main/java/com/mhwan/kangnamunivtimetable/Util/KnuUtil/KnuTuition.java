@@ -90,13 +90,15 @@ public class KnuTuition {
             list = new ArrayList<>();
             for (TuitionSemester semester : semesters) {
                 TuitionItem item = doGetSemesterTuition(semester);
-                item.semester = semester.schl_year+"-"+semester.schl_smst;
-                int s = item.pay_gubn.indexOf("'>")+2;
-                int e = item.pay_gubn.lastIndexOf("<");
+                if (item != null) {
+                    item.semester = semester.schl_year + "-" + semester.schl_smst;
+                    int s = item.pay_gubn.indexOf("'>") + 2;
+                    int e = item.pay_gubn.lastIndexOf("<");
 
-                item.pay_gubn = item.pay_gubn.substring(s,e);
+                    item.pay_gubn = item.pay_gubn.substring(s, e);
 
-                list.add(item);
+                    list.add(item);
+                }
             }
 
             Collections.reverse(list);

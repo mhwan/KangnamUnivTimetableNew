@@ -28,6 +28,7 @@ import com.mhwan.kangnamunivtimetable.Database.AppDatabaseHelper;
 import com.mhwan.kangnamunivtimetable.Items.TimetableSubject;
 import com.mhwan.kangnamunivtimetable.R;
 import com.mhwan.kangnamunivtimetable.Util.AccountPreference;
+import com.mhwan.kangnamunivtimetable.Util.AppContext;
 import com.mhwan.kangnamunivtimetable.Util.AppUtility;
 import com.mhwan.kangnamunivtimetable.Util.GetTimeTableTask;
 
@@ -243,10 +244,15 @@ public class SettingActivity extends BaseActivity {
                                 if (list != null) {
                                     helper.removeAllTimetable();
                                     helper.addAllTimeTable(list);
-                                    Intent intent = new Intent(getActivity(), MainActivity.class);
-                                    startActivity(intent);
-                                    getActivity().finish();
-                                    Toast.makeText(getActivity(), getString(R.string.message_update_timetable), Toast.LENGTH_SHORT).show();
+                                    if (getActivity() != null) {
+                                        Intent intent = new Intent(getActivity(), MainActivity.class);
+                                        startActivity(intent);
+                                        getActivity().finish();
+                                        Toast.makeText(getActivity(), getString(R.string.message_update_timetable), Toast.LENGTH_SHORT).show();
+                                    } else {
+                                        startActivity(new Intent(AppContext.getContext(), MainActivity.class));
+                                        Toast.makeText(AppContext.getContext(), AppContext.getContext().getString(R.string.message_update_timetable), Toast.LENGTH_SHORT).show();
+                                    }
                                 }
                             }
                         });
