@@ -230,6 +230,41 @@
 
             </RelativeLayout>
 
+            <View
+                android:layout_marginLeft="14dp"
+                android:layout_marginRight="14dp"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@android:color/white"/>
+            <RelativeLayout
+                android:paddingTop="14dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:id="@+id/button_drawer_library"
+                android:clickable="true"
+                android:background="?attr/selectableItemBackground"
+                android:paddingBottom="14dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_centerVertical="true"
+                    android:id="@+id/image_library"
+                    android:layout_alignParentLeft="true"
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    app:srcCompat="@drawable/ic_book_black_24dp"/>
+
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="36dp"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/white"
+                    android:text="@string/name_navi_library" />
+
+            </RelativeLayout>
             <!--
             <View
                 android:layout_marginLeft="14dp"

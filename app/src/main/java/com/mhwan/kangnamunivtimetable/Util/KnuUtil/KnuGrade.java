@@ -1,5 +1,7 @@
 package com.mhwan.kangnamunivtimetable.Util.KnuUtil;
 
+import android.util.Log;
+
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -7,23 +9,24 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.mhwan.kangnamunivtimetable.Items.Subject;
 import com.mhwan.kangnamunivtimetable.Util.AppUtility;
+import com.mhwan.kangnamunivtimetable.Util.SSLCertificateUtil;
 
+import java.io.OutputStream;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
-import java.util.List;
 
 import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLHandshakeException;
 
-public class KnuGrade {
+public class KnuGrade extends BaseKnuService{
     public static final String GET_SEMESETER_URL = "https://m.kangnam.ac.kr/knusmart/s/s252l.do";
     public static final String SEARCH_SCORE_URL = "https://m.kangnam.ac.kr/knusmart/s/s252.do?";
-    private String id, cookie;
     private HashMap<Semester, Grade> gradeList;
+    private boolean mode = true;
 
 
     public class Semester {
@@ -42,19 +45,60 @@ public class KnuGrade {
     }
 
     public KnuGrade(String id, String cookie) {
-        this.id = id;
-        this.cookie = cookie;
+        super(id, cookie);
     }
 
-    public Semester[] doGetAvilableSemester() {
+    @Override
+    protected String getSSLURL() {
+        if (mode)
+            return GET_SEMESETER_URL;
+        return GET_SEMESETER_URL;
+    }
 
+
+    public Object doGetAvilableSemester2() {
+        int i =0;
+        do {
+            try {
+                URL url = new URL(GET_SEMESETER_URL);
+                URLConnection connection = url.openConnection();
+
+                HttpsURLConnection httpsURLConnection = (HttpsURLConnection) connection;
+                httpsURLConnection.setRequestMethod("GET");
+                httpsURLConnection.addRequestProperty("Cookie", cookies);
+                httpsURLConnection.setUseCaches(false);
+                httpsURLConnection.setDoInput(true);
+                httpsURLConnection.setDoOutput(true);
+
+                JsonObject object = AppUtility.getAppinstance().getStringToJson(AppUtility.getAppinstance().readInputStreamToString(httpsURLConnection));
+                if (object.get("result").getAsString().equals("success")) {
+                    JsonArray array = object.get("data").getAsJsonArray();
+                    Gson gson = new Gson();
+                    Semester[] semesters = (Semester[]) AppUtility.getAppinstance().reverseArray(gson.fromJson(array, Semester[].class));
+                    return semesters;
+                } else
+                    return null;
+
+            } catch (SSLHandshakeException ex1) {
+                Log.e("handshakeException", "certificateInvalid");
+                ignoreWorkSSLCertificate();
+            }catch (Exception e) {
+                e.printStackTrace();
+                return null;
+            }
+        } while (isRequestPossible(i++));
+
+        return new Integer(-1);
+    }
+    /*
+    public Semester[] doGetAvilableSemester() {
         try {
             URL url = new URL(GET_SEMESETER_URL);
             URLConnection connection = url.openConnection();
 
             HttpsURLConnection httpsURLConnection = (HttpsURLConnection) connection;
             httpsURLConnection.setRequestMethod("GET");
-            httpsURLConnection.addRequestProperty("Cookie", cookie);
+            httpsURLConnection.addRequestProperty("Cookie", cookies);
             httpsURLConnection.setUseCaches(false);
             httpsURLConnection.setDoInput(true);
             httpsURLConnection.setDoOutput(true);
@@ -72,25 +116,28 @@ public class KnuGrade {
         }
 
         return null;
-    }
+    }*/
 
     public HashMap<Semester, Grade> doGetAllGrade(Semester[] semesters) {
         if (semesters != null && semesters.length > 0) {
             gradeList = new HashMap<>();
             Gson gson = new Gson();
             for (Semester semester : semesters) {
-                Grade grade = new Grade();
-                JsonObject object = AppUtility.getAppinstance().getStringToJson(getSpecificgrade(semester));
-                if (object.get("result").getAsString().equals("success")) {
-                    grade.semester = semester;
-                    JsonObject o1 = object.get("data").getAsJsonObject();
-                    grade = gson.fromJson(o1, Grade.class);
-                    JsonElement result = object.get("data2");
-                    JsonArray o2 = changeString(gson.toJson(result));
-                    grade.subjects = (Subject[]) AppUtility.getAppinstance().reverseArray(gson.fromJson(o2, Subject[].class));
-                }
+                String gradeJSon = getSpecificgrade(semester);
+                if (gradeJSon != null) {
+                    Grade grade = new Grade();
+                    JsonObject object = AppUtility.getAppinstance().getStringToJson(gradeJSon);
+                    if (object.get("result").getAsString().equals("success")) {
+                        grade.semester = semester;
+                        JsonObject o1 = object.get("data").getAsJsonObject();
+                        grade = gson.fromJson(o1, Grade.class);
+                        JsonElement result = object.get("data2");
+                        JsonArray o2 = changeString(gson.toJson(result));
+                        grade.subjects = (Subject[]) AppUtility.getAppinstance().reverseArray(gson.fromJson(o2, Subject[].class));
+                    }
 
-                gradeList.put(semester, grade);
+                    gradeList.put(semester, grade);
+                }
             }
             return gradeList;
         }
@@ -104,12 +151,13 @@ public class KnuGrade {
         result = result.replaceAll("subj_knam", "name");
         result = result.replaceAll("subj_unit", "unit");
 
-        System.out.print(result);
+        //System.out.print(result);
         JsonParser jsonParser = new JsonParser();
         return (JsonArray) jsonParser.parse(result);
     }
 
-    private String getSpecificgrade(Semester semester) {
+    //이것도 무시처리 할것인가?
+    private String getSpecificgrade(Semester semester){
         URL url = null;
         HttpsURLConnection httpsURLConnection = null;
         try {
@@ -117,16 +165,18 @@ public class KnuGrade {
             URLConnection connection = url.openConnection();
             httpsURLConnection = (HttpsURLConnection) connection;
             httpsURLConnection.setRequestMethod("GET");
-            httpsURLConnection.addRequestProperty("Cookie", cookie);
+            httpsURLConnection.addRequestProperty("Cookie", cookies);
             httpsURLConnection.setUseCaches(false);
             httpsURLConnection.setDoInput(true);
             httpsURLConnection.setDoOutput(true);
+
+            return AppUtility.getAppinstance().readInputStreamToString(httpsURLConnection);
 
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        return AppUtility.getAppinstance().readInputStreamToString(httpsURLConnection);
+        return null;
     }
 
     private String getSemseterParams(String y, String s) {

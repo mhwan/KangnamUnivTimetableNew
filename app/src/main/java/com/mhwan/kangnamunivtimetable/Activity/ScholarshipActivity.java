@@ -20,6 +20,7 @@ import com.mhwan.kangnamunivtimetable.Activity.Fragment.ScholarshipFragment;
 import com.mhwan.kangnamunivtimetable.Activity.Fragment.SchoolScheduleFragment;
 import com.mhwan.kangnamunivtimetable.Activity.Fragment.TuitionFragment;
 import com.mhwan.kangnamunivtimetable.R;
+import com.mhwan.kangnamunivtimetable.Util.AppContext;
 import com.mhwan.kangnamunivtimetable.Util.AppUtility;
 import com.mhwan.kangnamunivtimetable.Util.KnuUtil.KnuScholarship;
 import com.mhwan.kangnamunivtimetable.Util.KnuUtil.KnuTuition;
@@ -75,7 +76,7 @@ public class ScholarshipActivity extends BaseActivity {
         s_task.execute();
     }
 
-    class KnuScholarshipTask extends AsyncTask<Void, Void, ArrayList> {
+    class KnuScholarshipTask extends AsyncTask<Void, Void, Object> {
         private KnuScholarship knuScholarship;
 
         @Override
@@ -87,25 +88,30 @@ public class ScholarshipActivity extends BaseActivity {
         }
 
         @Override
-        protected void onPostExecute(ArrayList arrayList) {
-            if (arrayList != null) {
+        protected void onPostExecute(Object object) {
+            if (object instanceof Integer) {
+                Toast.makeText(AppContext.getContext(), AppContext.getContext().getString(R.string.message_error_invalid_ssl_certificate), Toast.LENGTH_SHORT).show();
+            } else {
+                ArrayList<KnuScholarship.ScholarshipItem> arrayList = null;
+                if (object instanceof ArrayList)
+                    arrayList = (ArrayList<KnuScholarship.ScholarshipItem>) object;
                 updateListener2.updateScholarshipData(arrayList);
             }
         }
 
         @Override
-        protected void onCancelled(ArrayList arrayList) {
-            super.onCancelled(arrayList);
+        protected void onCancelled() {
+            super.onCancelled();
             Toast.makeText(getContext(), getString(R.string.message_cancel_tuition_scholarship), Toast.LENGTH_SHORT).show();
         }
 
         @Override
-        protected ArrayList doInBackground(Void... voids) {
-            ArrayList<KnuScholarship.ScholarshipItem> list = knuScholarship.doGetAllScholarship();
+        protected Object doInBackground(Void... voids) {
+            Object list = knuScholarship.doGetAllScholarship2();
             return list;
         }
     }
-    class KnuTuitionTask extends AsyncTask<Void, Void, ArrayList> {
+    class KnuTuitionTask extends AsyncTask<Void, Void, Object> {
         private KnuTuition knuTuition;
 
         @Override
@@ -125,13 +131,20 @@ public class ScholarshipActivity extends BaseActivity {
         }
 
         @Override
-        protected void onPostExecute(ArrayList arrayList) {
-            updateListener1.updateTuitionData(arrayList);
+        protected void onPostExecute(Object arrayList) {
+            if (arrayList instanceof Integer){
+                Toast.makeText(AppContext.getContext(), AppContext.getContext().getString(R.string.message_error_invalid_ssl_certificate), Toast.LENGTH_SHORT).show();
+            } else {
+                ArrayList<KnuTuition.TuitionItem> list = null;
+                if (arrayList instanceof ArrayList)
+                    list = (ArrayList<KnuTuition.TuitionItem>) arrayList;
+                updateListener1.updateTuitionData(list);
+            }
         }
 
         @Override
-        protected ArrayList doInBackground(Void... voids) {
-            ArrayList<KnuTuition.TuitionItem> result = knuTuition.doGetAllTuition();
+        protected Object doInBackground(Void... voids) {
+            Object result = knuTuition.doGetAllTuition();
 
             return result;
         }

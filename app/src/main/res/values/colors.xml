@@ -9,6 +9,7 @@
     <color name="colorPrimaryBlack">#363636</color>
     <color name="colorLightBlack">#5A5A5A</color>
     <color name="colorLightDrawerBackground">#E5EFF7</color>
+    <color name="colorBackgroundPie">#fcfeff</color>
     <color name="colorBackgroundLightBlue">#FAFBFC</color>
     <color name="colorDividerGray">#C3C3C3</color>
     <color name="colorPieSkyBlue">#7FE0EB</color>

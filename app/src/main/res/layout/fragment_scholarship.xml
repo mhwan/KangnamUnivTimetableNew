@@ -9,7 +9,7 @@
 
     <TextView
         android:visibility="gone"
-        android:id="@+id/empty_messages"
+        android:id="@+id/sholar_empty_messages"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:textColor="@color/colorLightBlack"

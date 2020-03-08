@@ -44,11 +44,11 @@ public class GetTimeTableTask extends AsyncTask<Void, Void, Object> {
 
     @Override
     protected void onPostExecute(Object o) {
-        if (o != null && o instanceof ArrayList) {
+        if (o instanceof Integer) {
+            Toast.makeText(AppContext.getContext(), AppContext.getContext().getString(R.string.message_error_invalid_ssl_certificate), Toast.LENGTH_SHORT).show();
+        } else if (o != null && o instanceof ArrayList) {
             //성공
-            if (listener == null) {
-
-            } else {
+            if (listener != null) {
                 ArrayList<TimetableSubject> subjects = (ArrayList<TimetableSubject>) o;
                 listener.onDataSet(subjects);
             }
@@ -64,7 +64,7 @@ public class GetTimeTableTask extends AsyncTask<Void, Void, Object> {
     @Override
     protected Object doInBackground(Void... voids) {
         if (!isCancelled()) {
-            Object result = timeTable.doGetTimeTable();
+            Object result = timeTable.doGetTimeTable2();
             return result;
         }
         return null;

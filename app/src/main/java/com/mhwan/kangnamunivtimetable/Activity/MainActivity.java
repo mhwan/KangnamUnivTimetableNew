@@ -85,6 +85,7 @@ public class MainActivity extends BaseActivity implements TimeTableFragment.onTa
     protected void onStart() {
         super.onStart();
 
+        Log.d("cookies", preference.getCookies());
         isChangeSemester();
     }
 

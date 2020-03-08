@@ -1,5 +1,7 @@
 package com.mhwan.kangnamunivtimetable.Util.KnuUtil;
 
+import android.util.Log;
+
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
@@ -13,10 +15,9 @@ import java.util.Arrays;
 import java.util.Collections;
 
 import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLHandshakeException;
 
-public class KnuTuition {
-    private String id;
-    private String cookies;
+public class KnuTuition extends BaseKnuService{
     public static final String GET_SEMESTER_URL = "https://m.kangnam.ac.kr/knusmart/s/s260l.do";
     public static final String GET_TUITION_DETAIL_BASE_URL = "https://m.kangnam.ac.kr/knusmart/s/s260t.do?";
     public static final String GET_TUITION_URL = "https://m.kangnam.ac.kr/knusmart/s/s260.do?";
@@ -56,6 +57,41 @@ public class KnuTuition {
         public TuitionItem(){}
     }
 
+    public Object doGetAvailableSemesters2(){
+        int i = 0;
+        do {
+            try {
+                URL url = new URL(GET_SEMESTER_URL);
+                URLConnection connection = url.openConnection();
+
+                HttpsURLConnection httpsURLConnection = (HttpsURLConnection) connection;
+                httpsURLConnection.setRequestMethod("GET");
+                httpsURLConnection.addRequestProperty("Cookie", cookies);
+                httpsURLConnection.setUseCaches(false);
+                httpsURLConnection.setDoInput(true);
+                httpsURLConnection.setDoOutput(true);
+
+                JsonObject object = AppUtility.getAppinstance().getStringToJson(AppUtility.getAppinstance().readInputStreamToString(httpsURLConnection));
+                if (object.get("result").getAsString().equals("success")) {
+                    JsonArray array = object.get("data").getAsJsonArray();
+                    Gson gson = new Gson();
+                    TuitionSemester[] semesters = (TuitionSemester[]) AppUtility.getAppinstance().reverseArray(gson.fromJson(array, TuitionSemester[].class));
+                    return semesters;
+                } else
+                    return null;
+
+            } catch (SSLHandshakeException ex1) {
+                Log.e("handshakeException", "certificateInvalid");
+                ignoreWorkSSLCertificate();
+            } catch (Exception e) {
+                e.printStackTrace();
+                return null;
+            }
+        } while (isRequestPossible(i++));
+
+        return new Integer(-1);
+    }
+    /*
     public TuitionSemester[] doGetAvailableSemesters() {
         try {
             URL url = new URL(GET_SEMESTER_URL);
@@ -81,31 +117,37 @@ public class KnuTuition {
         }
 
         return null;
-    }
+    }*/
 
-    public ArrayList<TuitionItem> doGetAllTuition() {
-        TuitionSemester[] semesters = doGetAvailableSemesters();
-        ArrayList<TuitionItem> list = null;
-        if (semesters != null && semesters.length > 0) {
-            list = new ArrayList<>();
-            for (TuitionSemester semester : semesters) {
-                TuitionItem item = doGetSemesterTuition(semester);
-                if (item != null) {
-                    item.semester = semester.schl_year + "-" + semester.schl_smst;
-                    int s = item.pay_gubn.indexOf("'>") + 2;
-                    int e = item.pay_gubn.lastIndexOf("<");
+    public Object doGetAllTuition() {
+        Object obj = doGetAvailableSemesters2();
+        if (obj instanceof Integer)
+            return obj;
+        else if (obj instanceof TuitionSemester[]){
+            TuitionSemester[] semesters = (TuitionSemester[]) obj;
+            ArrayList<TuitionItem> list = null;
+            if (semesters != null && semesters.length > 0) {
+                list = new ArrayList<>();
+                for (TuitionSemester semester : semesters) {
+                    TuitionItem item = doGetSemesterTuition(semester);
+                    if (item != null) {
+                        item.semester = semester.schl_year + "-" + semester.schl_smst;
+                        int s = item.pay_gubn.indexOf("'>") + 2;
+                        int e = item.pay_gubn.lastIndexOf("<");
 
-                    item.pay_gubn = item.pay_gubn.substring(s, e);
+                        item.pay_gubn = item.pay_gubn.substring(s, e);
 
-                    list.add(item);
+                        list.add(item);
+                    }
                 }
+
+                Collections.reverse(list);
             }
 
-            Collections.reverse(list);
+
+            return list;
         }
-
-
-        return list;
+        return null;
     }
 
     public TuitionItem doGetSemesterTuition(TuitionSemester semester){
@@ -135,9 +177,11 @@ public class KnuTuition {
 
                 } else {
                     item = doGetSimpleTuition(getSemesterParams(semester.schl_year, semester.schl_smst), gson);
-                    item.isPay = false;
-                    if (item.bank_numb!= null && item.bank_numb.contains("<br>"))
-                        item.bank_numb = item.bank_numb.replaceAll("<br>", "\\\n\\\t");
+                    if (item != null) {
+                        item.isPay = false;
+                        if (item.bank_numb != null && item.bank_numb.contains("<br>"))
+                            item.bank_numb = item.bank_numb.replaceAll("<br>", "\\\n\\\t");
+                    }
                 }
 
                 return item;
@@ -153,6 +197,7 @@ public class KnuTuition {
     }
 
 
+    //이것도 무시처리 할것인가?
     private TuitionItem doGetSimpleTuition(String params, Gson gson){
         HttpsURLConnection httpsURLConnection;
         TuitionItem tuitionItem;
@@ -209,8 +254,12 @@ public class KnuTuition {
     }
 
     public KnuTuition(String id, String cookies){
-        this.id = id;
-        this.cookies = cookies;
+        super(id, cookies);
+    }
+
+    @Override
+    protected String getSSLURL() {
+        return GET_SEMESTER_URL;
     }
 
     private String getSemesterParams(String y, String s){

@@ -13,7 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Activity.EmployeeSearchActivity"></activity>
+        <activity android:name=".Activity.LibraryActivity"></activity>
+        <activity android:name=".Activity.EmployeeSearchActivity" />
         <activity android:name=".Activity.EmailActivity" />
         <activity android:name=".Activity.ScholarshipActivity" />
         <activity android:name=".Activity.HelpActivity" />
@@ -70,11 +71,11 @@
     <meta-data
         android:name="com.kakao.sdk.AppKey"
         android:value="861614ba95a9ab283a78cbd33893ee00" />
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-
     <uses-permission android:name="android.permission.VIBRATE" />
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
 </manifest>

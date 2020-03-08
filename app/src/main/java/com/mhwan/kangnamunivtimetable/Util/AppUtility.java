@@ -37,6 +37,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLHandshakeException;
 
 public class AppUtility {
     private static AppUtility Appinstance;
@@ -113,7 +114,7 @@ public class AppUtility {
         return string;
     }
 
-    public String readInputStreamToString(HttpsURLConnection connection) {
+    public String readInputStreamToString(HttpsURLConnection connection) throws SSLHandshakeException {
         String result = null;
         StringBuffer sb = new StringBuffer();
         InputStream is = null;
@@ -126,6 +127,8 @@ public class AppUtility {
                 sb.append(inputLine);
             }
             result = sb.toString();
+        } catch (SSLHandshakeException ex) {
+            throw ex;
         } catch (Exception e) {
             System.out.print("error");
             result = null;

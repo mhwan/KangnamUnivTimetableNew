@@ -17,9 +17,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.mhwan.kangnamunivtimetable.R;
 import com.mhwan.kangnamunivtimetable.Util.AccountPreference;
+import com.mhwan.kangnamunivtimetable.Util.AppContext;
 import com.mhwan.kangnamunivtimetable.Util.AppUtility;
 import com.mhwan.kangnamunivtimetable.Util.DoubleBackKeyPressed;
 import com.rupins.drawercardbehaviour.CardDrawerLayout;
@@ -58,6 +60,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
             findViewById(R.id.button_drawer_report).setOnClickListener(this);
             findViewById(R.id.button_drawer_map).setOnClickListener(this);
             findViewById(R.id.button_drawer_scholarship).setOnClickListener(this);
+            findViewById(R.id.button_drawer_library).setOnClickListener(this);
             //findViewById(R.id.button_drawer_email).setOnClickListener(this);
             findViewById(R.id.button_drawer_search).setOnClickListener(this);
             toolbarview.findViewById(R.id.main_toolbar_drawer).setOnClickListener(new View.OnClickListener() {
@@ -162,6 +165,9 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
                 break;
             case R.id.button_drawer_scholarship:
                 intent = new Intent(getActivity(), ScholarshipActivity.class);
+                break;
+            case R.id.button_drawer_library :
+                intent = new Intent(getActivity(), LibraryActivity.class);
                 break;
                 /*
             case R.id.button_drawer_email :

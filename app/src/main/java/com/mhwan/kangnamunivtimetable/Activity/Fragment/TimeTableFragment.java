@@ -91,7 +91,7 @@ public class TimeTableFragment extends Fragment implements View.OnClickListener,
                 else {
                     tempId += (d[j - 1].getDesc().toLowerCase() + "_" + i);
                 }
-                Log.d("id", tempId);
+                //Log.d("id", tempId);
                 int viewId = getResources().getIdentifier(tempId, "id", getContext().getPackageName());
                 timeTable_textview[j][i] = view.findViewById(viewId);
             }

@@ -43,7 +43,7 @@ public class ScholarshipFragment extends Fragment implements ScholarshipActivity
     }
 
     private void initView(View view){
-        emptyTextview = view.findViewById(R.id.empty_messages);
+        emptyTextview = view.findViewById(R.id.sholar_empty_messages);
         recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
         recyclerView.addItemDecoration(new SpacesItemDecoration(SpacesItemDecoration.RecyclerViewOrientation.LINEAR_VERTICAL, 10));

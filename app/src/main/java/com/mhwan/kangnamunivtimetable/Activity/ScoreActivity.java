@@ -18,6 +18,7 @@ import com.mhwan.kangnamunivtimetable.Activity.Fragment.TotalFirstFragment;
 import com.mhwan.kangnamunivtimetable.Activity.Fragment.TotalSecondFragment;
 import com.mhwan.kangnamunivtimetable.CustomUI.CircleIndicator;
 import com.mhwan.kangnamunivtimetable.R;
+import com.mhwan.kangnamunivtimetable.Util.AppContext;
 import com.mhwan.kangnamunivtimetable.Util.AppUtility;
 import com.mhwan.kangnamunivtimetable.Util.KnuUtil.KnuGrade;
 
@@ -26,7 +27,7 @@ import java.util.HashMap;
 public class ScoreActivity extends BaseActivity {
     private KnuGrade.Semester[] semesters;
     private KnuGradeTask task;
-    private HashMap<KnuGrade.Semester, KnuGrade.Grade> gradeList;
+    //private HashMap<KnuGrade.Semester, KnuGrade.Grade> gradeList;
     private UpdateData total_listener1, total_listener2, total_listener3, manage_listener;
 
     @Override
@@ -39,7 +40,7 @@ public class ScoreActivity extends BaseActivity {
 
     }
 
-    class KnuGradeTask extends AsyncTask<Void, Void, Boolean> {
+    class KnuGradeTask extends AsyncTask<Void, Void, Object> {
         private KnuGrade knuGrade;
 
         @Override
@@ -51,20 +52,27 @@ public class ScoreActivity extends BaseActivity {
         }
 
         @Override
-        protected Boolean doInBackground(Void... voids) {
-            boolean result = false;
+        protected Object doInBackground(Void... voids) {
+            Object result = null;
             if (!isCancelled()) {
-                gradeList = knuGrade.doGetAllGrade(knuGrade.doGetAvilableSemester());
-                return true;
+                Object obj = knuGrade.doGetAvilableSemester2();
+                if (obj != null && obj instanceof KnuGrade.Semester[])
+                    result = knuGrade.doGetAllGrade((KnuGrade.Semester[]) obj);
+                else
+                    result = obj;
             }
             return result;
         }
 
         @Override
-        protected void onPostExecute(Boolean aBoolean) {
+        protected void onPostExecute(Object aBoolean) {
             //프래그먼트에 초기화
-            if (aBoolean) {
-                //Log.d("ffrra", "result!!");
+            if (aBoolean instanceof Integer)
+                Toast.makeText(AppContext.getContext(), AppContext.getContext().getString(R.string.message_error_invalid_ssl_certificate), Toast.LENGTH_SHORT).show();
+            else {
+                HashMap<KnuGrade.Semester, KnuGrade.Grade> gradeList = null;
+                if (aBoolean instanceof HashMap)
+                    gradeList = (HashMap<KnuGrade.Semester, KnuGrade.Grade>) aBoolean;
                 total_listener1.updateView(gradeList);
                 total_listener2.updateView(gradeList);
                 //total_listener3.updateView(gradeList);

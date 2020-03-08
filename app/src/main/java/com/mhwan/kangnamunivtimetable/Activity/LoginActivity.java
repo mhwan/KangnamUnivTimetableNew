@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.mhwan.kangnamunivtimetable.R;
 import com.mhwan.kangnamunivtimetable.Util.AccountPreference;
+import com.mhwan.kangnamunivtimetable.Util.AppContext;
 import com.mhwan.kangnamunivtimetable.Util.AppUtility;
 import com.mhwan.kangnamunivtimetable.Util.KnuUtil.KnuLogin;
 
@@ -76,7 +77,9 @@ public class LoginActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(Object o) {
-            if (o instanceof ArrayList && o != null) {
+            if (o instanceof Integer) {
+                Toast.makeText(AppContext.getContext(), AppContext.getContext().getString(R.string.message_error_invalid_ssl_certificate), Toast.LENGTH_SHORT).show();
+            } else if (o != null && o instanceof ArrayList) {
                 //성공
                 ArrayList<String> result = (ArrayList<String>) o;
                 String str = TextUtils.join(";", result);
@@ -94,13 +97,15 @@ public class LoginActivity extends AppCompatActivity {
                 showWrongMessage((String) o);
             } else {
                 //오류발생
+                Toast.makeText(AppContext.getContext(), AppContext.getContext().getString(R.string.message_unknown), Toast.LENGTH_SHORT).show();
             }
         }
 
         @Override
         protected Object doInBackground(Void... voids) {
             if (!isCancelled()) {
-                Object result = login.doLogin();
+
+                Object result = login.doLogin2();
                 return result;
             }
             return null;

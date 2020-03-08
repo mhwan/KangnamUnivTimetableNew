@@ -88,6 +88,11 @@
         <item>등록금 납부현황</item>
         <item>장학금 내역</item>
     </string-array>
+
+    <string-array name="Library_name">
+        <item>실시간 열람실 좌석정보</item>
+        <item>도서관 도서검색</item>
+    </string-array>
     <string-array name="Alarm_time_opts">
         <item>0</item>
         <item>1</item>
